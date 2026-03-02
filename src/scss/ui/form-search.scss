@@ -1,0 +1,48 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.form-search {
+  display: flex;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  width: 100%;
+  &__input {
+    padding: 0 20px;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+
+    color: var(--white);
+    font-size: 17px;
+
+    &::placeholder {
+      color: var(--smoke)
+    }
+  }
+  &__submit {
+    @include flex-center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    flex-shrink: 0;
+
+    color: var(--smoke);
+
+    transition: color .3s ease;
+    @include hover {
+      color: var(--white);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

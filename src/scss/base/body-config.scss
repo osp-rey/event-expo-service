@@ -1,0 +1,19 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.body-hidden {
+  overflow: hidden;
+  touch-action: none;
+}
+.body {
+  font-family: "Inter", sans-serif;
+  color: var(--white);
+  background-color: var(--black);
+  font-size: 17px;
+  @include laptop-min {
+    font-size: 16px;
+  }
+  @include tablet {
+    font-size: 15px;
+  }
+}

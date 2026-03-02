@@ -1,0 +1,347 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.header {
+  &__wrapper {
+    padding: 10px 40px;
+    border-radius: 20px;
+    margin-top: 10px;
+    gap: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    background: rgba(26, 29, 34, 0.7);
+    @include desktop {
+      padding: 10px 20px;
+    }
+    @include laptop-min {
+      padding: 7px 15px;
+    }
+  }
+  &__top {
+    @include flex-between;
+    gap: 30px;
+    padding-bottom: 10px;
+    @include desktop {
+      gap: 20px;
+    }
+    @include laptop-min {
+      justify-content: start;
+      padding-bottom: 0;
+    }
+    @include tablet-min {
+      justify-content: space-between;
+    }
+  }
+  &__logo {
+    display: block;
+    flex-shrink: 0;
+    width: 160px;
+    @include desktop {
+      width: 120px;
+    }
+    @include laptop-min {
+      width: 100px;
+    }
+  }
+  &__form-search {
+    flex: 0 1 500px;
+
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__address {
+    @include laptop-min {
+      display: none;
+    }
+    .address {
+      font-family: "KanitCyrillic", sans-serif;
+      @include desktop {
+        font-size: 15px;
+      }
+    }
+    .work-time {
+      color: var(--smoke);
+      font-size: 15px;
+      margin-top: 5px;
+    }
+  }
+  &__social {
+    flex-shrink: 0;
+    @include laptop-min {
+      margin-left: auto;
+    }
+    @include tablet-min {
+      margin-left: 0;
+    }
+  }
+  &__social-items {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+
+    @include laptop-min {
+      gap: 10px;
+    }
+  }
+  &__social-item {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    -webkit-tap-highlight-color: transparent;
+
+    @include tablet {
+      width: 25px;
+      height: 25px;
+    }
+
+    color: var(--smoke);
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--white);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+
+      @include tablet {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  &__mail {
+    font-size: 15px;
+    display: block;
+    width: fit-content;
+    margin-top: 5px;
+    color: var(--smoke);
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--white);
+    }
+    @include laptop-min {
+      display: none;
+    }
+  }
+  &__tels {
+    position: relative;
+    flex-shrink: 0;
+
+    @media (min-width: 992px) {
+      @include hover {
+        .header__tels-grid {
+          transform: translateY(0);
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  &__tel-btn {
+    @include flex-center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    @media (min-width: 1366px) {
+      display: none;
+    }
+    @include tablet {
+      width: 25px;
+      height: 25px;
+    }
+
+    img {
+      display: block;
+      width: 24px;
+      pointer-events: none;
+
+      @include tablet {
+        width: 20px;
+      }
+    }
+  }
+  &__tels-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    row-gap: 10px;
+    @include desktop {
+      gap: 20px;
+      row-gap: 10px;
+    }
+    @include laptop {
+      position: absolute;
+      width: fit-content;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(15px);
+      background: rgba(0, 0, 0, 0.8);
+      right: 0;
+      z-index: 10;
+      grid-template-columns: 1fr;
+      gap: 20px;
+
+      transform: translateY(20px);
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+    }
+    @include laptop-min {
+      margin-top: 25px;
+      right: 50%;
+      transform: translateX(50%) !important;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    }
+
+    &._active {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__tel {
+    font-size: 20px;
+    font-family: "KanitCyrillic", sans-serif;
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+    @include desktop {
+      font-size: 16px;
+    }
+    @include laptop {
+      white-space: nowrap;
+    }
+  }
+  &__burger-btn {
+    @include flex-center;
+    width: 44px;
+    height: 44px;
+    border-radius: 6px;
+    background-color: var(--black);
+    color: white;
+    @media (min-width: 992px) {
+      display: none;
+    }
+
+    &._active {
+      div {
+        &:first-child {
+          transform: rotate(-45deg);
+        }
+        &:last-child {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    div {
+      position: absolute;
+      width: 20px;
+      height: 2px;
+      border-radius: 3px;
+      background-color: currentColor;
+
+      transition: transform 0.3s ease;
+
+      &:first-child {
+        transform: translateY(-3px);
+      }
+      &:last-child {
+        transform: translateY(3px);
+      }
+    }
+  }
+  &__bottom {
+    @include laptop-min {
+      position: absolute;
+      z-index: -9999;
+      opacity: 0;
+      visibility: visible;
+      left: -9999px;
+    }
+  }
+  &__bottom-wrapper {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    gap: 50px;
+    padding-top: 10px;
+
+    @include laptop {
+      gap: 25px;
+    }
+    @include laptop-middle {
+      gap: 18px;
+      padding: 15px 0px;
+    }
+  }
+  &__services {
+  }
+  &__services-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+    @include laptop {
+      font-size: 16px;
+    }
+    @include laptop-middle {
+      font-size: 14px;
+    }
+
+    img {
+      display: block;
+      flex-shrink: 0;
+      width: 20px;
+      pointer-events: none;
+    }
+  }
+  &__nav {
+  }
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+    @include laptop {
+      gap: 25px;
+      font-size: 16px;
+    }
+    @include laptop-middle {
+      gap: 16px;
+    }
+
+    a {
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__bottom-btn {
+    margin-left: auto;
+
+    @include laptop-middle {
+      display: none;
+    }
+  }
+}
