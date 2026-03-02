@@ -6,6 +6,21 @@
   border-radius: 50px;
   background: rgba(255, 255, 255, 0.1);
   width: 100%;
+
+  &._white {
+    background-color: var(--white-smoke);
+
+    .form-search__input {
+      color: var(--black);
+      &::placeholder {
+        color: var(--neutral);
+      }
+    }
+    .form-search__submit {
+      color: var(--neutral);
+    }
+  }
+
   &__input {
     padding: 0 20px;
     margin: 0;
@@ -17,8 +32,15 @@
     color: var(--white);
     font-size: 17px;
 
+    @include laptop-min {
+      font-size: 16px;
+    }
+    @include tablet {
+      font-size: 15px;
+    }
+
     &::placeholder {
-      color: var(--smoke)
+      color: var(--smoke);
     }
   }
   &__submit {
@@ -35,7 +57,7 @@
 
     color: var(--smoke);
 
-    transition: color .3s ease;
+    transition: color 0.3s ease;
     @include hover {
       color: var(--white);
     }

@@ -1,0 +1,97 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-intro {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100svh;
+  padding: 45px 0px;
+  z-index: 1;
+  @include laptop-min {
+    padding: 30px 0px;
+  }
+  @include tablet {
+    padding: 20px 0px;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    background: linear-gradient(
+      360deg,
+      rgba(26, 29, 34, 0.9) 0%,
+      rgba(26, 29, 34, 0) 100%
+    );
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 300px;
+    z-index: -1;
+
+    @include desktop {
+      height: 500px;
+    }
+    @include tablet {
+      height: 100%;
+      background: rgba(0, 0, 0, 0.45);
+    }
+  }
+  &__body {
+    display: flex;
+    align-items: flex-end;
+    gap: 40px;
+    @include desktop {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__title {
+    flex: 1;
+    @include desktop {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__info {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    flex: 0 0 560px;
+    gap: 40px;
+    @include laptop {
+      flex: auto;
+      gap: 30px;
+      padding-bottom: 0;
+    }
+    @include tablet {
+      gap: 20px;
+    }
+  }
+  &__content {
+    margin: 0;
+    flex: 1;
+    @include laptop {
+      flex: 0 1 350px;
+    }
+    @include tablet-min {
+      flex: auto;
+      width: 100%;
+      gap: 20px;
+    }
+  }
+  &__btn {
+    flex-shrink: 0;
+    @include desktop {
+      width: 350px;
+      max-width: 100%;
+    }
+    @include tablet {
+      flex: 1;
+      width: auto;
+    }
+  }
+}

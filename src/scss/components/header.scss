@@ -2,6 +2,11 @@
 @use "../base/media" as *;
 
 .header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 100;
   &__wrapper {
     padding: 10px 40px;
     border-radius: 20px;
@@ -46,6 +51,9 @@
   &__form-search {
     flex: 0 1 500px;
 
+    @include laptop-middle {
+      flex-basis: 350px;
+    }
     @include laptop-min {
       display: none;
     }
@@ -339,6 +347,7 @@
   }
   &__bottom-btn {
     margin-left: auto;
+    flex-shrink: 0;
 
     @include laptop-middle {
       display: none;

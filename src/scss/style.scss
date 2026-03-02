@@ -11,10 +11,14 @@
 @use "./ui/button";
 @use "./ui/list";
 @use "./ui/form-search";
+@use "./ui/video-bg";
+@use "./ui/title";
 
 // components
 @use "./components/header";
+@use "./components/burger";
+@use "./components/modal";
 
-
+@use "./components/s-intro";
 
 @use "./components/footer";
