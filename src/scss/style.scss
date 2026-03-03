@@ -13,6 +13,11 @@
 @use "./ui/form-search";
 @use "./ui/video-bg";
 @use "./ui/title";
+@use "./ui/sect";
+@use "./ui/card-service";
+@use "./ui/slider";
+@use "./ui/s-nav";
+@use "./ui/scrollable";
 
 // components
 @use "./components/header";
@@ -20,5 +25,7 @@
 @use "./components/modal";
 
 @use "./components/s-intro";
+@use "./components/s-services";
+@use "./components/s-portfolio";
 
 @use "./components/footer";

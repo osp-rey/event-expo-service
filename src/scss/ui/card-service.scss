@@ -1,0 +1,48 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.card-service {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 280px;
+  gap: 10px;
+  -webkit-tap-highlight-color: transparent;
+
+  padding: 30px;
+  border: 1px solid rgba(0, 134, 255, 0.5);
+  border-radius: 20px;
+
+  transition: box-shadow 0.3s ease;
+
+  @include hover {
+    box-shadow: 0 0 20px 0 rgba(0, 134, 255, 0.5);
+  }
+  @include laptop-middle {
+    padding: 25px;
+  }
+  @include tablet {
+    padding: 20px;
+    min-height: 255px;
+  }
+
+  &__title {
+    font-size: 20px;
+    line-height: 130%;
+    text-transform: uppercase;
+    font-family: "KanitCyrillic", sans-serif;
+
+    @include laptop-middle {
+      font-size: 18px;
+    }
+    @include tablet {
+      font-size: 16px;
+    }
+  }
+  &__icon {
+    display: block;
+    margin-left: auto;
+    pointer-events: none;
+    user-select: none;
+  }
+}

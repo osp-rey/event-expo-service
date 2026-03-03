@@ -13,6 +13,7 @@
   border-radius: 50px;
   flex-shrink: 0;
   width: fit-content;
+  -webkit-tap-highlight-color: transparent;
 
   box-shadow: var(--box-shadow);
   background: var(--background);

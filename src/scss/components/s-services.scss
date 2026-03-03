@@ -1,0 +1,37 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-services {
+  overflow: hidden;
+  &__slider {
+    overflow: visible !important;
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      @include desktop {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include laptop-middle {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include tablet {
+        display: flex;
+        gap: 0;
+      }
+    }
+    .swiper-slide {
+      box-sizing: border-box;
+      height: auto !important;
+
+      @include tablet {
+        width: 250px !important;
+        max-width: 100%;
+      }
+
+      .card-service {
+        height: 100%;
+      }
+    }
+  }
+}

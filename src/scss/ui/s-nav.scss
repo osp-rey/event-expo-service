@@ -1,0 +1,37 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-nav {
+  overflow: visible !important;
+  margin-bottom: 40px;
+  @include tablet {
+    margin-bottom: 30px;
+  }
+  &__item {
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 15px 20px;
+    width: fit-content;
+    background-color: var(--light);
+
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+
+    @include hover {
+      background-color: var(--primary);
+      color: white;
+    }
+    @include tablet {
+      padding: 12px 16px;
+    }
+    &._active {
+      pointer-events: none;
+      background-color: var(--primary);
+      color: white;
+    }
+  }
+}

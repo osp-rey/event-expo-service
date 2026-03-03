@@ -1,0 +1,53 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.sect-m {
+  margin: 100px 0px;
+  @include laptop {
+    margin: 80px 0px;
+  }
+  @include laptop-min {
+    margin: 70px 0px;
+  }
+  @include tablet-min {
+    margin: 50px 0px;
+  }
+}
+
+.sect-p {
+  padding: 100px 0px;
+  @include laptop {
+    padding: 80px 0px;
+  }
+  @include laptop-min {
+    padding: 70px 0px;
+  }
+  @include tablet-min {
+    padding: 50px 0px;
+  }
+
+  &._white {
+    background-color: white;
+    color: black;
+  }
+  &._radius {
+    border-radius: 30px;
+    @include laptop-min {
+      border-radius: 20px;
+    }
+  }
+}
+
+.sect-head {
+  margin-bottom: 40px;
+  @include tablet {
+    margin-bottom: 30px;
+  }
+  &__subtitle {
+    color: var(--smoke);
+    margin-bottom: 15px;
+    @include tablet {
+      margin-bottom: 10px;
+    }
+  }
+}
