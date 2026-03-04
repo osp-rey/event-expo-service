@@ -1,0 +1,7 @@
+.text-linear {
+  text-transform: uppercase;
+  background: linear-gradient(196deg, #00f5ff 0%, #0086ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

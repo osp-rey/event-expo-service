@@ -38,3 +38,20 @@
     font-size: 24px;
   }
 }
+
+.t-title {
+  font-family: "KanitCyrillic", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 130%;
+  margin: 0;
+  line-height: 110%;
+  text-transform: uppercase;
+
+  @include laptop {
+    font-size: 20px;
+  }
+  @include tablet {
+    font-size: 18px;
+  }
+}

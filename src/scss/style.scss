@@ -18,6 +18,10 @@
 @use "./ui/slider";
 @use "./ui/s-nav";
 @use "./ui/scrollable";
+@use "./ui/tab";
+@use "./ui/video-player";
+@use "./ui/circle-decor";
+@use "./ui/text";
 
 // components
 @use "./components/header";
@@ -27,5 +31,6 @@
 @use "./components/s-intro";
 @use "./components/s-services";
 @use "./components/s-portfolio";
+@use "./components/s-about";
 
 @use "./components/footer";

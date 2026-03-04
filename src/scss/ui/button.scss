@@ -3,8 +3,9 @@
 
 .btn-s {
   --background: linear-gradient(196deg, #00f5ff 0%, #0086ff 100%);
-  --box-shadow: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+  --box-shadow: none;
   --color: white;
+  --box-shadow-h: 0 0 25px 0 rgba(0, 170, 226, 0.7);
 
   @include flex-center;
   cursor: pointer;
@@ -23,10 +24,12 @@
   color: var(--color);
   text-align: center;
 
-  transition: box-shadow 0.3s ease;
+  transition:
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 
   @include hover {
-    --box-shadow: 0 0 25px 0 rgba(0, 170, 226, 0.7);
+    box-shadow: var(--box-shadow-h);
   }
 
   @include laptop-min {
@@ -35,5 +38,116 @@
   @include tablet-min {
     font-size: 15px;
     padding: 14px 20px;
+  }
+}
+
+.btn-o {
+  --border: rgba(15, 17, 21, 0.2);
+  --background: transparent;
+  --color: var(--black);
+  --box-shadow: none;
+
+  --border-h: rgba(0, 170, 226, 0.7);
+  --background-h: transparent;
+  --color-h: var(--primary);
+  --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+
+  @include flex-center;
+  border-radius: 50px;
+  border: 1px solid var(--border);
+  background-color: var(--background);
+  padding: 15px 39px;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: var(--box-shadow);
+
+  width: fit-content;
+  -webkit-tap-highlight-color: transparent;
+
+  user-select: none;
+  color: var(--color);
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  @include hover {
+    color: var(--color-h);
+    box-shadow: var(--box-shadow-h);
+    background-color: var(--background-h);
+    border-color: var(--border-h);
+  }
+
+  @include laptop-min {
+    font-size: 16px;
+  }
+  @include tablet-min {
+    font-size: 15px;
+    padding: 13px 19px;
+  }
+
+  &._dark {
+    --border: var(--primary-d);
+    --background: var(--black);
+    --color: white;
+    --box-shadow: 0 0 10px 0 rgba(0, 170, 226, 0.7);
+
+    --border-h: var(--primary-d);
+    --background-h: var(--black);
+    --color-h: white;
+    --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+  }
+}
+
+.btn-play {
+  --border: rgba(245, 247, 250, 0.5);
+  --background: linear-gradient(
+    196deg,
+    rgba(0, 245, 255, 0.3) 0%,
+    rgba(0, 134, 255, 0.3) 100%
+  );
+  --color: white;
+
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+
+  @include tablet {
+    width: 70px;
+    height: 70px;
+  }
+  @include hover {
+    .inside {
+      backdrop-filter: blur(5px);
+    }
+  }
+
+  .inside {
+    @include flex-center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    color: var(--color);
+    background: var(--background);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(15px);
+
+    transition:
+      color 0.3s ease,
+      background 0.3s ease,
+      backdrop-filter 0.3s ease,
+      border-color 0.3s ease;
+  }
+
+  svg {
+    width: 28px;
+    height: 28px;
+
+    @include tablet {
+      width: 24px;
+      height: 24px;
+    }
   }
 }

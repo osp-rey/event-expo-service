@@ -7,7 +7,7 @@ export default function sliders() {
       spaceBetween: 5,
       slidesPerView: "auto",
       autoplay: {
-        delay: 4000
+        delay: 4000,
       },
       pagination: {
         el: ".s-services .slider-pagination",
@@ -19,12 +19,55 @@ export default function sliders() {
   const navSliders = document.querySelectorAll(".s-nav");
 
   if (navSliders.length) {
-    navSliders.forEach(slider => {
+    navSliders.forEach((slider) => {
       const swiper = new Swiper(slider, {
         speed: 900,
         slidesPerView: "auto",
         spaceBetween: 5,
-      })
-    })
+      });
+    });
+  }
+
+  const portfolioItemSliders = document.querySelectorAll(
+    ".s-portfolio__item-slider",
+  );
+
+  if (portfolioItemSliders.length) {
+    portfolioItemSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 20,
+        allowTouchMove: false,
+        navigation: {
+          prevEl: slider
+            .closest(".s-portfolio__item")
+            .querySelector(".slider-arrow._prev"),
+          nextEl: slider
+            .closest(".s-portfolio__item")
+            .querySelector(".slider-arrow._next"),
+        },
+        breakpoints: {
+          992: {
+            allowTouchMove: true,
+          },
+        },
+      });
+    });
+  }
+
+  const portoflioSliders = document.querySelectorAll(".s-portfolio__slider");
+
+  if (portoflioSliders.length) {
+    portoflioSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 20,
+        slidesPerView: "auto",
+        pagination: {
+          el: slider.closest("[data-tab]").querySelector(".slider-pagination"),
+          clickable: true,
+        },
+      });
+    });
   }
 }

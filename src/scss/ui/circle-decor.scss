@@ -1,0 +1,78 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+.circle-decor {
+  position: absolute;
+  top: -85px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  @include tablet-min {
+    top: -40px;
+  }
+  .wrap {
+    @include flex-center;
+    position: relative;
+
+    span {
+      position: absolute;
+      aspect-ratio: 1/1;
+      border-radius: 50%;
+      background: linear-gradient(196deg, #00f5ff 0%, #0086ff 100%);
+      animation: softPulse 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      @include tablet-min {
+        background: linear-gradient(168.5deg, #00f5ff 0%, #0086ff 100%);
+      }
+      &:nth-child(1) {
+        width: 1295px;
+        opacity: 0.03;
+        animation-delay: 0s;
+        @include laptop {
+          width: 900px;
+        }
+        @include tablet-min {
+          width: 390px;
+        }
+      }
+      &:nth-child(2) {
+        width: 920px;
+        opacity: 0.07;
+        animation-delay: 1s;
+        @include laptop {
+          width: 700px;
+        }
+        @include tablet-min {
+          width: 275px;
+        }
+      }
+      &:nth-child(3) {
+        width: 635px;
+        opacity: 0.1;
+        animation-delay: 2s;
+        @include laptop {
+          width: 500px;
+        }
+        @include tablet-min {
+          width: 190px;
+        }
+      }
+      &:nth-child(4) {
+        width: 325px;
+        opacity: 0.15;
+        animation-delay: 3s;
+        @include tablet-min {
+          width: 110px;
+        }
+      }
+    }
+  }
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
