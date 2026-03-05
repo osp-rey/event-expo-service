@@ -173,6 +173,31 @@
                 }
             });
         });
+        const partnersSlider = document.querySelector(".s-partners__slider");
+        if (partnersSlider) {
+            new Swiper(partnersSlider, {
+                slidesPerView: "auto",
+                spaceBetween: 20,
+                speed: 12e3,
+                watchOverflow: true,
+                loop: true,
+                allowTouchMove: false,
+                watchSlidesProgress: true,
+                centeredSlides: true,
+                a11y: false,
+                autoplay: {
+                    delay: 0
+                }
+            });
+        }
+        const eventSlider = document.querySelector(".s-events__slider");
+        if (eventSlider) {
+            new Swiper(eventSlider, {
+                speed: 900,
+                spaceBetween: 20,
+                slidesPerView: 3
+            });
+        }
     }
     function spoller() {
         const spollersArray = document.querySelectorAll("[data-spollers]");

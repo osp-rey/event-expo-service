@@ -52,7 +52,8 @@
     border-radius: 20px 20px 0px 0px;
   }
 
-  & + .sect-pf, & + section .sect-pf {
+  & + .sect-pf,
+  & + section .sect-pf {
     padding-top: 120px;
     @include laptop {
       padding-top: 100px;
@@ -81,6 +82,24 @@
       height: 21px;
     }
   }
+  &._top {
+    &::before {
+      position: absolute;
+      content: "";
+      left: 0;
+      right: 0;
+      height: 31px;
+      background-color: var(--background);
+      top: -30px;
+      border-radius: 30px 30px 0px 0px;
+      z-index: 1;
+      @include laptop-min {
+        border-radius: 20px 20px 0px 0px;
+        top: -20px;
+        height: 21px;
+      }
+    }
+  }
 
   &._white {
     --background: white;
@@ -94,18 +113,8 @@
     --background: var(--ink);
     --color: white;
   }
-}
-
-.sect-head {
-  margin-bottom: 40px;
-  @include tablet {
-    margin-bottom: 30px;
-  }
-  &__subtitle {
-    color: var(--smoke);
-    margin-bottom: 15px;
-    @include tablet {
-      margin-bottom: 10px;
-    }
+  &._black {
+    --background: var(--black);
+    --color: white;
   }
 }

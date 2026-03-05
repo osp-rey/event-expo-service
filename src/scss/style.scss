@@ -22,6 +22,8 @@
 @use "./ui/video-player";
 @use "./ui/circle-decor";
 @use "./ui/text";
+@use "./ui/sect-head";
+@use "./ui/card-event";
 
 // components
 @use "./components/header";
@@ -33,5 +35,7 @@
 @use "./components/s-portfolio";
 @use "./components/s-about";
 @use "./components/s-location";
+@use "./components/s-partners";
+@use "./components/s-events";
 
 @use "./components/footer";

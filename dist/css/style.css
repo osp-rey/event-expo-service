@@ -436,6 +436,17 @@ img {
   border-radius: 0 0 30px 30px;
   z-index: 1
 }
+.sect._top::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  height: 31px;
+  background-color: var(--background);
+  top: -30px;
+  border-radius: 30px 30px 0 0;
+  z-index: 1
+}
 .sect._white {
   --background: white;
   --color: black
@@ -448,12 +459,9 @@ img {
   --background: var(--ink);
   --color: white
 }
-.sect-head {
-  margin-bottom: 40px
-}
-.sect-head__subtitle {
-  color: var(--smoke);
-  margin-bottom: 15px
+.sect._black {
+  --background: var(--black);
+  --color: white
 }
 .card-service {
   display: flex;
@@ -677,6 +685,26 @@ img {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent
+}
+.sect-head {
+  margin-bottom: 40px
+}
+.sect-head._center {
+  text-align: center
+}
+.sect-head__subtitle {
+  color: var(--smoke);
+  margin-bottom: 15px
+}
+.card-event {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: var(--light)
+}
+.card-event__body {
+  padding: 30px;
+  margin-top: 20px
 }
 .header {
   position: fixed;
@@ -1328,6 +1356,29 @@ img {
   margin: auto auto 0 auto;
   min-height: 60px
 }
+.s-partners {
+  overflow: hidden
+}
+.s-partners__slider {
+  overflow: visible!important
+}
+.s-partners__slider .swiper-wrapper {
+  align-items: center;
+  transition-timing-function: linear
+}
+.s-partners__slide {
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 200px!important;
+  max-width: 100%
+}
+.s-partners__slide img {
+  display: block
+}
 @media (min-width:768px) {
   .slider-pagination._mob {
     display: none
@@ -1625,6 +1676,11 @@ img {
     bottom: -20px;
     height: 21px
   }
+  .sect._top::before {
+    border-radius: 20px 20px 0 0;
+    top: -20px;
+    height: 21px
+  }
   .header__wrapper {
     padding: 7px 15px
   }
@@ -1715,12 +1771,6 @@ img {
   .t-title {
     font-size: 18px
   }
-  .sect-head {
-    margin-bottom: 30px
-  }
-  .sect-head__subtitle {
-    margin-bottom: 10px
-  }
   .card-service {
     padding: 20px;
     min-height: 255px
@@ -1737,6 +1787,12 @@ img {
   }
   .s-nav__item {
     padding: 12px 16px
+  }
+  .sect-head {
+    margin-bottom: 30px
+  }
+  .sect-head__subtitle {
+    margin-bottom: 10px
   }
   .header__social-item {
     width: 25px;
@@ -1910,6 +1966,9 @@ img {
   }
   .s-location__map {
     left: -350px
+  }
+  .s-partners__slide {
+    width: 120px!important
   }
 }
 @media (any-hover:hover) {

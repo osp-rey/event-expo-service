@@ -70,4 +70,33 @@ export default function sliders() {
       });
     });
   }
+
+  const partnersSlider = document.querySelector(".s-partners__slider");
+
+  if (partnersSlider) {
+    const swiper = new Swiper(partnersSlider, {
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      speed: 12000,
+      watchOverflow: true,
+      loop: true,
+      allowTouchMove: false,
+      watchSlidesProgress: true,
+      centeredSlides: true,
+      a11y: false,
+      autoplay: {
+        delay: 0,
+      },
+    });
+  }
+
+  const eventSlider = document.querySelector(".s-events__slider");
+
+  if (eventSlider) {
+    const swiper = new Swiper(eventSlider, {
+      speed: 900,
+      spaceBetween: 20,
+      slidesPerView: 3
+    })
+  }
 }

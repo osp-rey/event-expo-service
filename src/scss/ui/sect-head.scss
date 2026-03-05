@@ -1,0 +1,21 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.sect-head {
+  margin-bottom: 40px;
+  @include tablet {
+    margin-bottom: 30px;
+  }
+
+  &._center {
+    text-align: center;
+  }
+
+  &__subtitle {
+    color: var(--smoke);
+    margin-bottom: 15px;
+    @include tablet {
+      margin-bottom: 10px;
+    }
+  }
+}

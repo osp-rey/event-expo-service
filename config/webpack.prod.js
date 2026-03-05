@@ -40,9 +40,9 @@ const paths = {
 };
 const config = {
   mode: "production",
-  cache: {
-    type: "filesystem",
-  },
+  // cache: {
+  //   type: "filesystem",
+  // },
   optimization: {
     minimizer: [
       new TerserPlugin({
