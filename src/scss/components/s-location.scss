@@ -49,11 +49,20 @@
 
     .loc-btn {
       position: relative;
+      -webkit-tap-highlight-color: transparent;
       display: block;
 
       @include hover {
         .item-name {
           opacity: 1;
+        }
+      }
+
+      &._active {
+        pointer-events: none;
+
+        .loc-path {
+          color: var(--blue);
         }
       }
     }
@@ -69,6 +78,9 @@
       &._hover {
         opacity: 1;
         visibility: visible;
+      }
+      @include laptop-min {
+        display: none;
       }
     }
 
@@ -132,6 +144,11 @@
     @include tablet {
       margin: 0 auto;
     }
+
+    &._active {
+      opacity: 1;
+      visibility: visible;
+    }
   }
   &__popup-body {
     position: relative;
@@ -153,6 +170,7 @@
     width: 20px;
     height: 20px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 
     opacity: 0.2;
 
@@ -175,8 +193,14 @@
   }
   &__popup-title {
     margin-bottom: 50px;
+    transition: transform .3s ease, opacity .3s ease;
     @include laptop-middle {
       margin-bottom: 35px;
+    }
+
+    &._hide {
+      transform: translateY(-20px);
+      opacity: 0;
     }
   }
   &__popup-list {
@@ -189,12 +213,21 @@
       gap: 18px;
     }
 
+    &._hide {
+      li {
+        transform: translateX(-20px);
+        opacity: 0;
+      }
+    }
+
     li {
       display: flex;
       align-items: center;
       gap: 20px;
       padding-bottom: 10px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+      transition: transform .3s ease, opacity .3s ease;
 
       .num {
         font-family: "KanitCyrillic", sans-serif;
