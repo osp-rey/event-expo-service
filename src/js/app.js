@@ -1,6 +1,7 @@
 import "../scss/style.scss";
 import burger from "./files/burger.js";
 import headerDropdownTels from "./files/headerDropdownTels.js";
+import interactiveMap from "./files/interactiveMap.js";
 import portfolioMore from "./files/portfolioMore.js";
 import sliders from "./files/sliders.js";
 import spoller from "./files/spoller.js";
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   portfolioMore();
   tab();
   videoPlayer();
+  interactiveMap();
 
   AOS.init();
   Fancybox.bind("[data-fancybox]", {

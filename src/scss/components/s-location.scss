@@ -1,0 +1,228 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-location {
+  background-color: var(--ink);
+  color: white;
+  &__body {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 900px;
+    width: 100%;
+    @include laptop-min {
+      min-height: 800px;
+    }
+  }
+  &__container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex: 1;
+
+    @include tablet {
+      flex-direction: column;
+      justify-content: start;
+      gap: 70px;
+    }
+  }
+  &__head {
+    position: relative;
+    max-width: 300px;
+    margin-bottom: 0;
+    z-index: 1;
+  }
+  &__map {
+    position: absolute;
+    left: 145px;
+    bottom: -90px;
+
+    @include laptop-min {
+      left: -100px;
+      bottom: -200px;
+    }
+    @include tablet-min {
+      left: -350px;
+    }
+
+    .loc-btn {
+      position: relative;
+      display: block;
+
+      @include hover {
+        .item-name {
+          opacity: 1;
+        }
+      }
+    }
+    .item-name {
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+
+      transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+
+      &._hover {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .loc-path {
+      position: relative;
+      cursor: pointer;
+      color: rgba(20, 123, 216, 0.05);
+      box-shadow: 0 0 10px 0 #147bd8;
+
+      & + path {
+        color: var(--cobalt);
+
+        transition: color 0.3s ease;
+      }
+
+      transition:
+        color 0.3s ease,
+        stroke 0.3s ease;
+
+      @include hover {
+        color: rgba(102, 240, 255, 0.1);
+        stroke: var(--blue);
+
+        & + path {
+          color: var(--blue);
+        }
+      }
+
+      &::before {
+        position: absolute;
+        content: attr(data-name);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+      }
+    }
+  }
+  &__popup {
+    position: relative;
+    z-index: 1;
+    backdrop-filter: blur(10px);
+    background: rgba(26, 29, 34, 0.7);
+    width: 500px;
+    max-width: 100%;
+    border-radius: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+
+    @include laptop-middle {
+      width: 450px;
+    }
+    @include laptop-min {
+      padding-right: 10px;
+    }
+    @include tablet {
+      margin: 0 auto;
+    }
+  }
+  &__popup-body {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    height: 100%;
+    @include laptop-middle {
+      padding: 40px 25px;
+    }
+    @include tablet {
+      padding: 40px 20px;
+    }
+  }
+  &__popup-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    opacity: 0.2;
+
+    transition: opacity 0.3s ease;
+
+    @include hover {
+      opacity: 1;
+    }
+    @include tablet {
+      width: 16px;
+      height: 16px;
+      top: 15px;
+      right: 15px;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__popup-title {
+    margin-bottom: 50px;
+    @include laptop-middle {
+      margin-bottom: 35px;
+    }
+  }
+  &__popup-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 30px;
+
+    @include laptop-middle {
+      gap: 18px;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+      .num {
+        font-family: "KanitCyrillic", sans-serif;
+        font-size: 32px;
+        line-height: 130%;
+        text-transform: uppercase;
+        width: 100px;
+        flex-shrink: 0;
+
+        @include laptop-middle {
+          font-size: 26px;
+          width: 80px;
+        }
+        @include tablet {
+          font-size: 24px;
+        }
+      }
+      .val {
+        color: var(--smoke);
+      }
+    }
+  }
+  &__popup-btn {
+    margin: auto auto 0px auto;
+    min-height: 60px;
+    @include tablet {
+      min-height: auto;
+      width: 100%;
+    }
+  }
+}

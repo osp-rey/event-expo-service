@@ -3,8 +3,11 @@
 
 .s-portfolio {
   position: relative;
-  overflow: hidden;
   z-index: 2;
+
+  .sect-body {
+    overflow: hidden;
+  }
   &__slider {
   }
   &__slider-wrapper {

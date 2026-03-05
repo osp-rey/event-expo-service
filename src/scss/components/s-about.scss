@@ -3,24 +3,27 @@
 
 .s-about {
   position: relative;
-  overflow: hidden;
-  background-color: var(--black-l);
   z-index: 1;
 
-  &::before {
-    position: absolute;
-    content: "";
-    border-radius: 50%;
-    filter: blur(300px);
-    background-color: var(--primary);
-    width: 570px;
-    aspect-ratio: 1/1;
-    left: -45px;
-    top: -85px;
-    opacity: 0.4;
-    z-index: -1;
-    @include tablet {
-      display: none;
+  &__body {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    &::after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      filter: blur(300px);
+      background-color: var(--primary);
+      width: 570px;
+      aspect-ratio: 1/1;
+      left: -45px;
+      top: -85px;
+      opacity: 0.4;
+      z-index: -1;
+      @include tablet {
+        display: none;
+      }
     }
   }
   &__wrapper {
