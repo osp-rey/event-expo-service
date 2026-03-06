@@ -104,10 +104,14 @@
   &._white {
     --background: white;
     --color: black;
+    z-index: 2;
+
+    & + .sect {
+      border-radius: 0 !important;
+    }
   }
   &._black-l {
     --background: var(--black-l);
-    --color: white;
   }
   &._ink {
     --background: var(--ink);

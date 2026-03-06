@@ -16,6 +16,7 @@
   width: fit-content;
   -webkit-tap-highlight-color: transparent;
 
+  user-select: none;
   box-shadow: var(--box-shadow);
   background: var(--background);
 
@@ -62,6 +63,7 @@
   box-shadow: var(--box-shadow);
 
   width: fit-content;
+  user-select: none;
   -webkit-tap-highlight-color: transparent;
 
   font-size: 17px;
@@ -97,6 +99,28 @@
 
     --border-h: var(--primary-d);
     --background-h: var(--black);
+    --color-h: white;
+    --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+  }
+  &._transparent {
+    --border: var(--primary-d);
+    --background: transparent;
+    --color: white;
+    --box-shadow: 0 0 10px 0 rgba(0, 170, 226, 0.7);
+
+    --border-h: var(--primary-d);
+    --background-h: transparent;
+    --color-h: white;
+    --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+  }
+  &._black-l {
+    --border: var(--black-l);
+    --background: var(--black-l);
+    --color: white;
+    --box-shadow: none;
+
+    --border-h: var(--primary-d);
+    --background-h: var(--black-l);
     --color-h: white;
     --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
   }
@@ -150,5 +174,17 @@
       width: 24px;
       height: 24px;
     }
+  }
+}
+
+.btn-more {
+  width: 100%;
+  margin-top: 40px;
+  @include laptop-min {
+    margin-top: 30px;
+  }
+
+  &[disabled] {
+    pointer-events: none;
   }
 }

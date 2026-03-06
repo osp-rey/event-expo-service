@@ -1,0 +1,35 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.social {
+  display: flex;
+  gap: 10px;
+}
+.social-item {
+  @include flex-center;
+  border-radius: 50%;
+  background: linear-gradient(196deg, #00f5ff 0%, #0086ff 100%);
+  width: 50px;
+  height: 50px;
+
+  color: var(--white);
+
+  transition: transform .3s ease;
+
+  @include tablet {
+    width: 40px;
+    height: 40px;
+  }
+  @include hover {
+    transform: scale(1.08);
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    @include tablet {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

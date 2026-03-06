@@ -1,0 +1,222 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.footer {
+  position: relative;
+  background-color: black;
+  border-radius: 30px 30px 0px 0px;
+  z-index: 10;
+  padding: 80px 0px 40px 0px;
+  @include laptop {
+    padding-top: 60px;
+  }
+  @include laptop-min {
+    padding-top: 40px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  &__logo {
+    display: block;
+    width: 240px;
+    margin-bottom: 80px;
+    @include laptop {
+      margin-bottom: 60px;
+    }
+    @include laptop-min {
+      margin-bottom: 40px;
+    }
+    @include tablet {
+      margin-left: auto;
+      margin-right: auto;
+      width: 180px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    @include laptop-middle {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    @include tablet {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      text-align: center;
+      gap: 40px;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    gap: 20px;
+    flex: 0 1 720px;
+    @include laptop {
+      flex-basis: 550px;
+    }
+    @include laptop-middle {
+      width: 100%;
+      flex: auto;
+      grid-template-columns: 1fr;
+    }
+    @include tablet {
+      gap: 5px;
+    }
+  }
+  &__grid-item {
+    padding: 30px;
+    border-radius: 15px;
+    background-color: var(--black);
+    @include laptop {
+      padding: 20px;
+    }
+    @include tablet {
+      border-radius: 12px;
+
+      .social {
+        justify-content: center;
+      }
+    }
+    a {
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__title {
+    color: var(--smoke);
+    margin-bottom: 15px;
+  }
+  &__tel {
+    font-size: 28px;
+    font-family: "KanitCyrillic", sans-serif;
+    @include laptop {
+      font-size: 24px;
+    }
+    @include tablet {
+      font-size: 20px;
+    }
+  }
+  &__grid-val {
+    font-family: "KanitCyrillic", sans-serif;
+    font-size: 24px;
+    @include laptop {
+      font-size: 20px;
+    }
+  }
+  &__grid-note {
+    margin-top: 15px;
+    color: var(--smoke);
+  }
+  &__nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 100px;
+    flex: 0 1 930px;
+    @include desktop {
+      flex: 1;
+      gap: 40px;
+    }
+    @include laptop-middle {
+      grid-template-columns: 1fr;
+    }
+  }
+  &__nav-item {
+  }
+  &__list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include tablet {
+      margin-top: 20px;
+      gap: 15px;
+    }
+
+    a {
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__info-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+    gap: 80px;
+    row-gap: 20px;
+
+    @include laptop {
+      margin-top: 60px;
+      gap: 60px;
+    }
+    @include laptop-min {
+      margin-top: 40px;
+      gap: 40px;
+    }
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+      gap: 15px;
+    }
+
+    a {
+      color: var(--smoke);
+
+      transition: color 0.3s ease;
+      @include hover {
+        color: var(--primary);
+      }
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid var(--gray);
+    color: var(--smoke);
+
+    @include tablet {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      margin-top: 30px;
+      padding-top: 30px;
+    }
+    @include tablet-min {
+      padding-top: 20px;
+      margin-top: 20px;
+    }
+  }
+  &__bottom-content {
+  }
+  &__dev {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 5px;
+
+    user-select: none;
+
+    transition: color 0.3s ease;
+    @include hover {
+      color: var(--primary);
+    }
+
+    img {
+      display: block;
+      pointer-events: none;
+    }
+  }
+}

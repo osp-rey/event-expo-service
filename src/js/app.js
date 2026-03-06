@@ -4,6 +4,7 @@ import headerDropdownTels from "./files/headerDropdownTels.js";
 import headerScroll from "./files/headerScroll.js";
 import inputmask from "./files/inputmask.js";
 import interactiveMap from "./files/interactiveMap.js";
+import map from "./files/map.js";
 import portfolioMore from "./files/portfolioMore.js";
 import sliders from "./files/sliders.js";
 import spoller from "./files/spoller.js";
@@ -23,6 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
   interactiveMap();
   inputmask();
   headerScroll();
+  map();
 
   AOS.init();
   Fancybox.bind("[data-fancybox]", {

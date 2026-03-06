@@ -38,6 +38,24 @@
             });
         }
     }
+    function createScript(url, type) {
+        if (!url) return;
+        return new Promise((resolve, reject) => {
+            const script = document.querySelector(`script[src="${url}"]`);
+            if (script) resolve(script); else {
+                const htmlScript = document.createElement("script");
+                htmlScript.src = url;
+                if (type) htmlScript.type = type;
+                htmlScript.onload = () => {
+                    resolve(htmlScript);
+                };
+                htmlScript.onerror = () => {
+                    reject(new Error(`Не удалось загрузить скрипт: ${url}`));
+                };
+                document.head.appendChild(htmlScript);
+            }
+        });
+    }
     function slideUp(target, duration = 500, showmore = 0) {
         if (!target.classList.contains("_slide")) {
             target.classList.add("_slide");
@@ -188,6 +206,57 @@
                     titlePopup.classList.remove("_hide");
                     listPopup.classList.remove("_hide");
                 }, 400);
+            }
+        }
+    }
+    function map() {
+        const maps = document.querySelectorAll(".map");
+        if (maps.length) {
+            maps.forEach(map => {
+                const options = {
+                    root: null,
+                    rootMargin: "0px",
+                    scrollMargin: "0px",
+                    threshold: .01
+                };
+                function callback(entries, observer) {
+                    entries.forEach(entry => {
+                        const target = entry.target;
+                        if (entry.isIntersecting) {
+                            createScript("https://api-maps.yandex.ru/2.1/?apikey=b46e9249-4925-4460-b11c-3aaf76ad0115&lang=ru_RU", "text/javascript").then(() => handlerCreateMap(target));
+                            observer.unobserve(target);
+                        }
+                    });
+                }
+                const observer = new IntersectionObserver(callback, options);
+                observer.observe(map);
+            });
+            function handlerCreateMap(map) {
+                const center = JSON.parse(map.dataset.center);
+                const zoom = Number(map.dataset.zoom);
+                const iconHref = map.dataset.icon;
+                let objectMark = {};
+                if (iconHref) objectMark = {
+                    iconLayout: "default#image",
+                    iconImageHref: iconHref,
+                    iconImageSize: [ 60, 75 ],
+                    iconImageOffset: [ -25, -60 ]
+                };
+                function init() {
+                    const htmlMap = new ymaps.Map(map, {
+                        center,
+                        zoom
+                    });
+                    const placemark = new ymaps.Placemark(center, {}, objectMark);
+                    htmlMap.geoObjects.add(placemark);
+                    htmlMap.controls.remove("geolocationControl");
+                    htmlMap.controls.remove("searchControl");
+                    htmlMap.controls.remove("trafficControl");
+                    htmlMap.controls.remove("typeSelector");
+                    htmlMap.controls.remove("fullscreenControl");
+                    htmlMap.controls.remove("rulerControl");
+                }
+                ymaps.ready(init);
             }
         }
     }
@@ -614,6 +683,7 @@
         interactiveMap();
         inputmask();
         headerScroll();
+        map();
         AOS.init();
         Fancybox.bind("[data-fancybox]", {
             closeButton: false

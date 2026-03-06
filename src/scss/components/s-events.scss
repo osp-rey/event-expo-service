@@ -1,7 +1,9 @@
 @use "../base/templates" as *;
 @use "../base/media" as *;
 .s-events {
-  overflow: hidden;
+  .sect-body {
+    overflow: hidden;
+  }
   &__slider-wrapper {
     display: flex;
     align-items: center;

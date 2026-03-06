@@ -16,4 +16,14 @@
   @include tablet {
     font-size: 15px;
   }
+
+  &._offset {
+    padding-top: 190px;
+    @include desktop {
+      padding-top: 170px;
+    }
+    @include laptop-min {
+      padding-top: 80px;
+    }
+  }
 }
