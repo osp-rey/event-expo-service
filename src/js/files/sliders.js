@@ -93,17 +93,22 @@ export default function sliders() {
   const eventSliders = document.querySelectorAll(".s-events__slider");
 
   if (eventSliders.length) {
-    eventSliders.forEach(slider => {
+    eventSliders.forEach((slider) => {
       const swiper = new Swiper(slider, {
         speed: 900,
         spaceBetween: 20,
         slidesPerView: "auto",
+        autoplay: {
+          delay: 4000,
+        },
         navigation: {
-          nextEl: slider.closest("[data-tab]").querySelector(".s-events__slider-next"),
+          nextEl: slider
+            .closest("[data-tab]")
+            .querySelector(".s-events__slider-next"),
         },
         pagination: {
           el: slider.closest("[data-tab]").querySelector(".slider-pagination"),
-          clickable: true
+          clickable: true,
         },
         breakpoints: {
           1200: {
@@ -127,7 +132,7 @@ export default function sliders() {
           },
         },
       });
-    })
+    });
   }
 
   const cardEventSliders = document.querySelectorAll(".card-event__slider");
@@ -143,6 +148,37 @@ export default function sliders() {
           nextEl: slider.querySelector(".slider-arrow._next"),
         },
       });
+    });
+  }
+
+  const sliderBlog = document.querySelector(".s-blog__slider");
+
+  if (sliderBlog) {
+    const swiper = new Swiper(sliderBlog, {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 10,
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        prevEl: ".s-blog .slider-arrow._prev",
+        nextEl: ".s-blog .slider-arrow._next",
+      },
+      pagination: {
+        el: ".s-blog .slider-pagination",
+        clickable: true
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        576: {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+        },
+      },
     });
   }
 }

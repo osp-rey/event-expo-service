@@ -26,6 +26,7 @@
 @use "./ui/card-event";
 @use "./ui/input";
 @use "./ui/input-variants";
+@use "./ui/card-blog";
 
 // components
 @use "./components/header";
@@ -40,5 +41,6 @@
 @use "./components/s-partners";
 @use "./components/s-events";
 @use "./components/s-connect";
+@use "./components/s-blog";
 
 @use "./components/footer";

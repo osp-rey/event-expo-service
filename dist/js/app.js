@@ -286,6 +286,9 @@
                 speed: 900,
                 spaceBetween: 20,
                 slidesPerView: "auto",
+                autoplay: {
+                    delay: 4e3
+                },
                 navigation: {
                     nextEl: slider.closest("[data-tab]").querySelector(".s-events__slider-next")
                 },
@@ -326,6 +329,35 @@
                 }
             });
         });
+        const sliderBlog = document.querySelector(".s-blog__slider");
+        if (sliderBlog) {
+            new Swiper(sliderBlog, {
+                speed: 900,
+                slidesPerView: "auto",
+                spaceBetween: 10,
+                autoplay: {
+                    delay: 4e3
+                },
+                navigation: {
+                    prevEl: ".s-blog .slider-arrow._prev",
+                    nextEl: ".s-blog .slider-arrow._next"
+                },
+                pagination: {
+                    el: ".s-blog .slider-pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    992: {
+                        slidesPerView: 3,
+                        spaceBetween: 20
+                    },
+                    576: {
+                        slidesPerView: "auto",
+                        spaceBetween: 20
+                    }
+                }
+            });
+        }
     }
     function spoller() {
         const spollersArray = document.querySelectorAll("[data-spollers]");

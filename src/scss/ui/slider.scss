@@ -120,10 +120,18 @@
     --background: rgba(26, 29, 34, 0.1);
     --border: rgba(26, 29, 34, 00);
     --color: black;
-    --background-h: rgba(26, 29, 34, 0.5);
+    --background-h: rgba(136, 154, 187, 0.5);
     --border-h: rgba(26, 29, 34, 0.5);
     --color-h: white;
 
     backdrop-filter: none;
+  }
+  &._black-l {
+    --background: var(--black-l);
+    --border: var(--black-l);
+    --color: white;
+    --background-h: rgba(136, 154, 187, 0.5);
+    --border-h: rgba(136, 154, 187, 0.5);
+    --color-h: white;
   }
 }

@@ -1,0 +1,67 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-blog {
+  @include laptop-min {
+    overflow: hidden;
+  }
+  &__body {
+    display: flex;
+    gap: 20px;
+    @include laptop {
+      display: block;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    flex-shrink: 0;
+    .slider-arrows {
+      margin-top: auto;
+    }
+
+    @include laptop {
+      align-items: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 30px;
+      margin-bottom: 40px;
+
+      .slider-arrows {
+        margin-top: 0;
+        margin-left: auto;
+      }
+      .sect-head {
+        margin-bottom: 0;
+        width: 100%;
+      }
+    }
+    @include laptop-min {
+      margin-bottom: 30px;
+      gap: 20px;
+      .slider-arrows {
+        display: none;
+      }
+    }
+  }
+  &__btn {
+    margin-bottom: 30px;
+    @include laptop {
+      margin: 0;
+    }
+  }
+  &__slider {
+    @include laptop-min {
+      overflow: visible !important;
+    }
+
+    .swiper-slide {
+      @include laptop-min {
+        width: 340px !important;
+        max-width: 100%;
+      }
+    }
+  }
+}
