@@ -24,6 +24,8 @@
 @use "./ui/text";
 @use "./ui/sect-head";
 @use "./ui/card-event";
+@use "./ui/input";
+@use "./ui/input-variants";
 
 // components
 @use "./components/header";
@@ -37,5 +39,6 @@
 @use "./components/s-location";
 @use "./components/s-partners";
 @use "./components/s-events";
+@use "./components/s-connect";
 
 @use "./components/footer";

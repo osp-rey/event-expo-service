@@ -38,6 +38,96 @@
             });
         }
     }
+    function slideUp(target, duration = 500, showmore = 0) {
+        if (!target.classList.contains("_slide")) {
+            target.classList.add("_slide");
+            target.style.transitionProperty = "height, margin, padding";
+            target.style.transitionDuration = duration + "ms";
+            target.style.height = `${target.offsetHeight}px`;
+            target.offsetHeight;
+            target.style.overflow = "hidden";
+            target.style.height = showmore ? `${showmore}px` : `0px`;
+            target.style.paddingTop = 0;
+            target.style.paddingBottom = 0;
+            target.style.marginTop = 0;
+            target.style.marginBottom = 0;
+            window.setTimeout(() => {
+                target.hidden = !showmore ? true : false;
+                !showmore ? target.style.removeProperty("height") : null;
+                target.style.removeProperty("padding-top");
+                target.style.removeProperty("padding-bottom");
+                target.style.removeProperty("margin-top");
+                target.style.removeProperty("margin-bottom");
+                !showmore ? target.style.removeProperty("overflow") : null;
+                target.style.removeProperty("transition-duration");
+                target.style.removeProperty("transition-property");
+                target.classList.remove("_slide");
+                document.dispatchEvent(new CustomEvent("slideUpDone", {
+                    detail: {
+                        target
+                    }
+                }));
+            }, duration);
+        }
+    }
+    function slideDown(target, duration = 500, showmore = 0) {
+        if (!target.classList.contains("_slide")) {
+            target.classList.add("_slide");
+            target.hidden = target.hidden ? false : null;
+            showmore ? target.style.removeProperty("height") : null;
+            let height = target.offsetHeight;
+            target.style.overflow = "hidden";
+            target.style.height = showmore ? `${showmore}px` : `0px`;
+            target.style.paddingTop = 0;
+            target.style.paddingBottom = 0;
+            target.style.marginTop = 0;
+            target.style.marginBottom = 0;
+            target.offsetHeight;
+            target.style.transitionProperty = "height, margin, padding";
+            target.style.transitionDuration = duration + "ms";
+            target.style.height = height + "px";
+            target.style.removeProperty("padding-top");
+            target.style.removeProperty("padding-bottom");
+            target.style.removeProperty("margin-top");
+            target.style.removeProperty("margin-bottom");
+            window.setTimeout(() => {
+                target.style.removeProperty("height");
+                target.style.removeProperty("overflow");
+                target.style.removeProperty("transition-duration");
+                target.style.removeProperty("transition-property");
+                target.classList.remove("_slide");
+                document.dispatchEvent(new CustomEvent("slideDownDone", {
+                    detail: {
+                        target
+                    }
+                }));
+            }, duration);
+        }
+    }
+    function headerScroll() {
+        const headerTop = document.querySelector(".header__top");
+        if (headerTop) {
+            const header = document.querySelector(".header");
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (window.matchMedia("(max-width: 991px)").matches) return;
+                if (scrollTop > headerTop.clientHeight) {
+                    header.classList.add("_scroll");
+                    if (!headerTop.hasAttribute("hidden")) slideUp(headerTop);
+                } else {
+                    header.classList.remove("_scroll");
+                    if (headerTop.hasAttribute("hidden")) slideDown(headerTop);
+                }
+                lastScrollTop = scrollTop;
+            });
+        }
+    }
+    function inputmask() {
+        const inputs = document.querySelectorAll('input[type="tel"]');
+        const im = new Inputmask("+7 (999) 999-99-99");
+        im.mask(inputs);
+    }
     function interactiveMap() {
         const map = document.querySelector("#interactive-map");
         if (map) {
@@ -190,14 +280,52 @@
                 }
             });
         }
-        const eventSlider = document.querySelector(".s-events__slider");
-        if (eventSlider) {
-            new Swiper(eventSlider, {
+        const eventSliders = document.querySelectorAll(".s-events__slider");
+        if (eventSliders.length) eventSliders.forEach(slider => {
+            new Swiper(slider, {
                 speed: 900,
                 spaceBetween: 20,
-                slidesPerView: 3
+                slidesPerView: "auto",
+                navigation: {
+                    nextEl: slider.closest("[data-tab]").querySelector(".s-events__slider-next")
+                },
+                pagination: {
+                    el: slider.closest("[data-tab]").querySelector(".slider-pagination"),
+                    clickable: true
+                },
+                breakpoints: {
+                    1200: {
+                        spaceBetween: 20,
+                        slidesPerView: 3
+                    },
+                    992: {
+                        spaceBetween: 20,
+                        slidesPerView: 2
+                    }
+                },
+                on: {
+                    touchStart: function(swiper, event) {
+                        const isProductSlider = event.target.closest(".card-event__slider");
+                        if (isProductSlider) swiper.allowTouchMove = false;
+                    },
+                    touchEnd: function(swiper) {
+                        swiper.allowTouchMove = true;
+                    }
+                }
             });
-        }
+        });
+        const cardEventSliders = document.querySelectorAll(".card-event__slider");
+        if (cardEventSliders.length) cardEventSliders.forEach(slider => {
+            new Swiper(slider, {
+                speed: 900,
+                slidesPerView: 1,
+                spaceBetween: 15,
+                navigation: {
+                    prevEl: slider.querySelector(".slider-arrow._prev"),
+                    nextEl: slider.querySelector(".slider-arrow._next")
+                }
+            });
+        });
     }
     function spoller() {
         const spollersArray = document.querySelectorAll("[data-spollers]");
@@ -452,6 +580,8 @@
         tab();
         videoPlayer();
         interactiveMap();
+        inputmask();
+        headerScroll();
         AOS.init();
         Fancybox.bind("[data-fancybox]", {
             closeButton: false

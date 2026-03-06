@@ -1,6 +1,28 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
 .s-events {
+  overflow: hidden;
   &__slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
   }
   &__slider {
+    @include laptop-min {
+      width: 100%;
+      overflow: visible !important;
+    }
+    .swiper-slide {
+      box-sizing: border-box;
+      @include laptop-min {
+        width: 370px !important;
+        max-width: 100%;
+      }
+    }
+  }
+  &__slider-next {
+    @include laptop-min {
+      display: none;
+    }
   }
 }

@@ -1,0 +1,91 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.fancybox__backdrop {
+  backdrop-filter: blur(30px);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  cursor: default;
+  border-radius: 20px;
+  padding: 0;
+  width: 800px;
+  color: white;
+  display: none;
+  box-shadow:
+    0 0 30px 0 rgba(0, 0, 0, 0.2),
+    0 0 10px 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(180deg, #0f1115 0%, #213345 100%);
+  max-width: calc(100% - 30px);
+  &__body {
+    position: relative;
+    padding: 80px;
+    max-width: 100%;
+    margin: 0 auto;
+    @include laptop-min {
+      padding: 55px 40px 40px 40px;
+    }
+    @include tablet {
+      padding: 55px 20px 30px 20px;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    display: block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.2;
+
+    transition: opacity .3s ease;
+
+    @include laptop-min {
+      top: 20px;
+      right: 20px;
+    }
+    @include hover {
+      opacity: 1;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  &__title {
+    margin-bottom: 40px;
+    @include laptop-min {
+      margin-bottom: 30px;
+    }
+    @include tablet {
+      margin-bottom: 25px;
+    }
+  }
+  &__content {
+    margin: 0;
+  }
+  &__form {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+    @include laptop-min {
+      margin-top: 40px;
+    }
+    @include tablet {
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .btn-s[type="submit"] {
+      width: 100%;
+      min-height: 60px;
+      @include tablet {
+        min-height: auto;
+      }
+    }
+  }
+}

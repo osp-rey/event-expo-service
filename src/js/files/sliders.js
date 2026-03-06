@@ -90,13 +90,59 @@ export default function sliders() {
     });
   }
 
-  const eventSlider = document.querySelector(".s-events__slider");
+  const eventSliders = document.querySelectorAll(".s-events__slider");
 
-  if (eventSlider) {
-    const swiper = new Swiper(eventSlider, {
-      speed: 900,
-      spaceBetween: 20,
-      slidesPerView: 3
+  if (eventSliders.length) {
+    eventSliders.forEach(slider => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 20,
+        slidesPerView: "auto",
+        navigation: {
+          nextEl: slider.closest("[data-tab]").querySelector(".s-events__slider-next"),
+        },
+        pagination: {
+          el: slider.closest("[data-tab]").querySelector(".slider-pagination"),
+          clickable: true
+        },
+        breakpoints: {
+          1200: {
+            spaceBetween: 20,
+            slidesPerView: 3,
+          },
+          992: {
+            spaceBetween: 20,
+            slidesPerView: 2,
+          },
+        },
+        on: {
+          touchStart: function (swiper, event) {
+            const isProductSlider = event.target.closest(".card-event__slider");
+            if (isProductSlider) {
+              swiper.allowTouchMove = false;
+            }
+          },
+          touchEnd: function (swiper) {
+            swiper.allowTouchMove = true;
+          },
+        },
+      });
     })
+  }
+
+  const cardEventSliders = document.querySelectorAll(".card-event__slider");
+
+  if (cardEventSliders.length) {
+    cardEventSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        slidesPerView: 1,
+        spaceBetween: 15,
+        navigation: {
+          prevEl: slider.querySelector(".slider-arrow._prev"),
+          nextEl: slider.querySelector(".slider-arrow._next"),
+        },
+      });
+    });
   }
 }

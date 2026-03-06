@@ -1,20 +1,97 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
 .card-event {
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   background-color: var(--light);
   &__slider {
+    width: 100%;
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 10;
+
+      &._prev {
+        left: 20px;
+      }
+      &._next {
+        right: 20px;
+      }
+
+      @include tablet-min {
+        &._prev {
+          left: 10px;
+        }
+        &._next {
+          right: 10px;
+        }
+      }
+    }
   }
   &__slide {
+    aspect-ratio: 1/1;
+    border-radius: 20px;
+    overflow: hidden;
+    outline: none;
+
+    @include hover {
+      img {
+        transform: scale(1.08);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition: transform 0.3s linear;
+    }
   }
   &__body {
-    padding: 30px;
-    margin-top: 20px;
+    position: relative;
+    padding: 50px 30px 30px 30px;
+    @include tablet {
+      padding: 50px 25px 25px 25px;
+    }
+    @include tablet-min {
+      padding: 45px 15px 20px 15px;
+    }
   }
   &__btn {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    max-width: 100%;
+    min-height: 60px;
+    white-space: nowrap;
+
+    @include tablet-min {
+      width: fit-content;
+      min-height: auto;
+    }
   }
   &__title {
+    font-family: "KanitCyrillic", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    text-transform: uppercase;
+    margin: 0px 0px 10px 0px;
+    @include tablet {
+      font-size: 20px;
+    }
   }
   &__content {
+    @include overflowText(4);
+    color: var(--neutral);
+    margin: 0;
   }
 }
