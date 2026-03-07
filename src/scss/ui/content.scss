@@ -1,0 +1,10 @@
+.content {
+  line-height: 150%;
+
+  & > * {
+    margin: 0;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+}

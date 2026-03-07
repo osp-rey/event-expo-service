@@ -134,4 +134,12 @@
     --border-h: rgba(136, 154, 187, 0.5);
     --color-h: white;
   }
+  &._gray-l {
+    --background: var(--gray-l);
+    --border: var(--gray-l);
+    --color: black;
+    --background-h: var(--primary);
+    --border-h: var(--primary);
+    --color-h: white;
+  }
 }

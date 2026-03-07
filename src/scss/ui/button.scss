@@ -35,10 +35,10 @@
 
   @include laptop-min {
     font-size: 16px;
+    padding: 14px 20px;
   }
   @include tablet-min {
     font-size: 15px;
-    padding: 14px 20px;
   }
 }
 
@@ -85,10 +85,10 @@
 
   @include laptop-min {
     font-size: 16px;
+    padding: 13px 19px;
   }
   @include tablet-min {
     font-size: 15px;
-    padding: 13px 19px;
   }
 
   &._dark {
@@ -121,6 +121,17 @@
 
     --border-h: var(--primary-d);
     --background-h: var(--black-l);
+    --color-h: white;
+    --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+  }
+  &._smoke {
+    --border: rgba(255, 255, 255, 0.1);
+    --background: transparent;
+    --color: var(--smoke);
+    --box-shadow: none;
+
+    --border-h: var(--primary-d);
+    --background-h: transparent;
     --color-h: white;
     --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
   }

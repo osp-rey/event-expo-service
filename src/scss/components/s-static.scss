@@ -1,0 +1,65 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-static {
+  @include laptop-min {
+    overflow: hidden;
+  }
+  &__grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 60px;
+    @include laptop-middle {
+      gap: 40px;
+    }
+    @include laptop-min {
+      display: block;
+    }
+  }
+  &__item {
+    overflow: hidden;
+    width: 100%;
+
+    @include laptop-min {
+      overflow: visible;
+
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .slider-arrows {
+      margin-top: 40px;
+      @include laptop-min {
+        display: none;
+      }
+    }
+    .slider-pagination {
+      margin-top: 30px;
+    }
+  }
+  &__slider {
+    width: 100%;
+    @include laptop-min {
+      overflow: visible !important;
+    }
+  }
+  &__slide {
+    @include laptop-min {
+      width: 250px !important;
+      max-width: 100%;
+    }
+    .icon {
+      display: block;
+      width: 60px;
+    }
+    .text {
+      font-size: 20px;
+      margin-top: 30px;
+      @include laptop {
+        font-size: 18px;
+      }
+    }
+  }
+}

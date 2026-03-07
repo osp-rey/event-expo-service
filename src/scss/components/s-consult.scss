@@ -1,0 +1,49 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-consult {
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 80px;
+    border-radius: 20px;
+    background: linear-gradient(180deg, #252a32 0%, #213345 100%);
+
+    @include laptop {
+      padding: 40px;
+    }
+    @include laptop-min {
+      flex-wrap: wrap;
+    }
+    @include tablet {
+      padding: 40px 20px;
+    }
+  }
+  &__info {
+    flex: 0 1 780px;
+    @include laptop-min {
+      flex: auto;
+      width: 100%;
+    }
+  }
+  &__content {
+    margin: 0;
+    color: var(--smoke);
+  }
+  &__form {
+    flex: 0 1 780px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 25px;
+
+    .btn-s[type="submit"] {
+      width: 100%;
+    }
+
+    @include laptop-min {
+      flex: auto;
+      width: 100%;
+    }
+  }
+}

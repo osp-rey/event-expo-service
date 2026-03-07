@@ -167,7 +167,7 @@ export default function sliders() {
       },
       pagination: {
         el: ".s-blog .slider-pagination",
-        clickable: true
+        clickable: true,
       },
       breakpoints: {
         992: {
@@ -177,6 +177,30 @@ export default function sliders() {
         576: {
           slidesPerView: "auto",
           spaceBetween: 20,
+        },
+      },
+    });
+  }
+
+  const staticSlider = document.querySelector(".s-static__slider");
+
+  if (staticSlider) {
+    const swiper = new Swiper(staticSlider, {
+      speed: 900,
+      spaceBetween: 25,
+      slidesPerView: "auto",
+      navigation: {
+        prevEl: ".s-static .slider-arrow._prev",
+        nextEl: ".s-static .slider-arrow._next",
+      },
+      pagination: {
+        el: ".s-static .slider-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 40,
         },
       },
     });
