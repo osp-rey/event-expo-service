@@ -1,28 +1,37 @@
-@use '../base/templates' as *;
-@use '../base/media' as *;
+@use "../base/templates" as *;
+@use "../base/media" as *;
 
 .s-steps {
   @include laptop-min {
     overflow: hidden;
   }
-  &__slider {
-    @include laptop-min {
-      overflow: visible !important;
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    row-gap: 40px;
+
+    @include desktop-big {
+      grid-template-columns: repeat(4, 1fr);
     }
-    .swiper-wrapper {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
+    @include laptop-middle {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include laptop-min {
+      grid-template-columns: repeat(2, 1fr);
       gap: 20px;
-      row-gap: 40px;
-      @include desktop-big {
+    }
+    @include tablet {
+      gap: 15px;
+    }
+    @include tablet-min {
+      gap: 10px;
+      grid-template-columns: 1fr;
+    }
+
+    &._standart {
+      @media (min-width: 1200px) {
         grid-template-columns: repeat(4, 1fr);
-      }
-      @include laptop-middle {
-        grid-template-columns: repeat(3, 1fr);
-      }
-      @include laptop-min {
-        display: flex !important;
-        gap: 0;
       }
     }
   }
@@ -35,10 +44,9 @@
     box-sizing: border-box;
     height: auto !important;
     z-index: 1;
-
-    @include laptop-min {
-      width: 345px !important;
-      max-width: 100%;
+    @include tablet {
+      padding: 0px 0px 0px 30px;
+      flex-direction: row;
     }
 
     .num {
@@ -49,11 +57,21 @@
       line-height: 100%;
       line-height: 100%;
       color: var(--black);
-       -webkit-text-stroke: 1px rgba(0, 170, 226, 0.7);
+      -webkit-text-stroke: 1px rgba(0, 170, 226, 0.7);
       text-shadow:
         0 0 10px rgba(0, 170, 226, 0.7),
-        0 0 20px rgba(0, 170, 226, 0.4);
+        0 0 30px rgba(0, 170, 226, 0.2);
       z-index: -1;
+
+      @include tablet {
+        font-size: 60px;
+        color: transparent;
+        left: 0;
+        top: auto;
+        text-shadow:
+          0 0 10px rgba(0, 170, 226, 0.4),
+          0 0 30px rgba(0, 170, 226, 0.2);
+      }
     }
     .text {
       padding: 40px;
@@ -70,6 +88,12 @@
       @include laptop {
         padding: 30px;
         font-size: 18px;
+      }
+      @include tablet {
+        padding: 20px;
+        font-size: 15px;
+        border-radius: 12px;
+        height: 100%;
       }
     }
   }

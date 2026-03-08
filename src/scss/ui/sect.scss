@@ -52,8 +52,8 @@
     border-radius: 20px 20px 0px 0px;
   }
 
-  & + .sect-pf,
-  & + section .sect-pf {
+  & + .sect-pf, & + .sect-p,
+  & + section .sect-pf, & + section .sect-p {
     padding-top: 120px;
     @include laptop {
       padding-top: 100px;
@@ -63,6 +63,19 @@
     }
     @include tablet-min {
       padding-top: 70px;
+    }
+  }
+
+  & + .sect-m {
+    margin-top: 130px;
+    @include laptop {
+      margin-top: 100px;
+    }
+    @include laptop-min {
+      margin-top: 90px;
+    }
+    @include tablet-min {
+      margin-top: 70px;
     }
   }
 

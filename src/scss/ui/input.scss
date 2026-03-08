@@ -54,7 +54,8 @@
 
     &:checked + .wpcf7-list-item-label {
       &::before {
-        background: url('@img/check-primary.svg') center / 12px auto no-repeat;
+        background: url('@img/check-white.svg') center / 10px auto no-repeat;
+        background-color: var(--primary);
       }
     }
   }
@@ -80,6 +81,8 @@
       flex-shrink: 0;
       border: 1px solid var(--primary);
       margin-top: 2px;
+
+      transition: background-color .3s ease;
     }
   }
 

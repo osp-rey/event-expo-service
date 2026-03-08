@@ -4,6 +4,7 @@
 .slider-pagination {
   @include flex-center;
   --background: white;
+  --fill: rgba(0, 0, 0, 0.5);
 
   gap: 10px;
   width: 100%;
@@ -27,6 +28,28 @@
   @include tablet {
     margin-top: 10px;
     gap: 5px;
+  }
+
+  &._min {
+    margin-top: 10px;
+    gap: 5px;
+
+    @include tablet {
+      gap: 4px;
+    }
+
+    .swiper-pagination-bullet {
+      @include tablet {
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+  &._fill {
+    padding: 2px;
+    border-radius: 50px;
+    background-color: var(--fill);
+    width: fit-content;
   }
 
   .swiper-pagination-bullet {

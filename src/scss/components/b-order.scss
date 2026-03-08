@@ -2,6 +2,8 @@
 @use "../base/media" as *;
 
 .b-order {
+  position: relative;
+  z-index: 1;
   padding: 40px;
   background: linear-gradient(180deg, #252a32 0%, #213345 100%);
   border-radius: 20px;
@@ -9,7 +11,7 @@
     padding: 40px 30px;
   }
   @include tablet {
-    padding: 30px 18px;
+    padding: 40px 18px;
   }
   &__title {
     font-family: "KanitCyrillic", sans-serif;

@@ -32,6 +32,8 @@
 @use "./ui/content";
 @use "./ui/more-item";
 @use "./ui/card-portfolio";
+@use "./ui/card-product";
+@use "./ui/card-addition";
 
 // components
 @use "./components/header";
@@ -57,5 +59,7 @@
 @use "./components/s-price";
 @use "./components/s-steps";
 @use "./components/s-projects";
+@use "./components/s-catalog";
+@use "./components/s-services-rec";
 
 @use "./components/footer";

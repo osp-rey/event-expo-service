@@ -24,6 +24,30 @@
             }
         }
     }
+    function buttonsNote() {
+        const butons = document.querySelectorAll("[data-btn-note]");
+        if (butons.length) butons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const selectorTarget = btn.dataset.targetNote;
+                const target = document.querySelector(selectorTarget);
+                const value = btn.dataset.btnNote;
+                if (target) target.value = value;
+            });
+        });
+    }
+    function cardDescr() {
+        const contents = document.querySelectorAll(".card-descr");
+        if (contents.length) contents.forEach(content => {
+            const lineHeight = +window.getComputedStyle(content).lineHeight.slice(0, 2);
+            const rows = 4;
+            const btn = content.nextElementSibling;
+            if (content.clientHeight <= lineHeight * rows) btn.remove(); else content.classList.add("_hide");
+            btn.addEventListener("click", () => {
+                content.classList.remove("_hide");
+                btn.remove();
+            });
+        });
+    }
     function headerDropdownTels() {
         const btn = document.querySelector(".header__tel-btn");
         if (btn && window.matchMedia("(max-width: 991px)").matches) {
@@ -248,11 +272,6 @@
                 navigation: {
                     prevEl: slider.closest(".card-portfolio").querySelector(".slider-arrow._prev"),
                     nextEl: slider.closest(".card-portfolio").querySelector(".slider-arrow._next")
-                },
-                breakpoints: {
-                    992: {
-                        allowTouchMove: true
-                    }
                 }
             });
         });
@@ -388,21 +407,6 @@
                 }
             });
         }
-        const stepsSlider = document.querySelector(".s-steps__slider");
-        if (stepsSlider && window.matchMedia("(max-width: 991px)").matches) {
-            new Swiper(stepsSlider, {
-                speed: 900,
-                spaceBetween: 20,
-                slidesPerView: "auto",
-                autoplay: {
-                    delay: 4e3
-                },
-                pagination: {
-                    el: ".s-steps .slider-pagination",
-                    clickable: true
-                }
-            });
-        }
         const portfolioGallerySlider = document.querySelector(".s-portfolio__gallery-slider");
         if (portfolioGallerySlider) {
             new Swiper(portfolioGallerySlider, {
@@ -450,6 +454,29 @@
                 }
             });
         }
+        const cardProductSliders = document.querySelectorAll(".card-product__slider");
+        if (cardProductSliders.length) cardProductSliders.forEach(slider => {
+            new Swiper(slider, {
+                speed: 900,
+                spaceBetween: 10,
+                pagination: {
+                    el: slider.querySelector(".slider-pagination"),
+                    clickable: true
+                }
+            });
+        });
+        const cardAdditionSliders = document.querySelectorAll(".card-addition__slider");
+        if (cardAdditionSliders.length) cardAdditionSliders.forEach(slider => {
+            new Swiper(slider, {
+                speed: 900,
+                spaceBetween: 10,
+                slidesPerView: "auto",
+                pagination: {
+                    el: slider.querySelector(".slider-pagination"),
+                    clickable: true
+                }
+            });
+        });
     }
     function spoller() {
         const spollersArray = document.querySelectorAll("[data-spollers]");
@@ -707,6 +734,8 @@
         inputmask();
         map();
         more();
+        buttonsNote();
+        cardDescr();
         AOS.init();
         Fancybox.bind("[data-fancybox]", {
             closeButton: false

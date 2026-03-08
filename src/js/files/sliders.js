@@ -47,11 +47,6 @@ export default function sliders() {
             .closest(".card-portfolio")
             .querySelector(".slider-arrow._next"),
         },
-        breakpoints: {
-          992: {
-            allowTouchMove: true,
-          },
-        },
       });
     });
   }
@@ -213,23 +208,6 @@ export default function sliders() {
     });
   }
 
-  const stepsSlider = document.querySelector(".s-steps__slider");
-
-  if (stepsSlider && window.matchMedia("(max-width: 991px)").matches) {
-    const swiper = new Swiper(stepsSlider, {
-      speed: 900,
-      spaceBetween: 20,
-      slidesPerView: "auto",
-      autoplay: {
-        delay: 4000,
-      },
-      pagination: {
-        el: ".s-steps .slider-pagination",
-        clickable: true,
-      },
-    });
-  }
-
   const portfolioGallerySlider = document.querySelector(
     ".s-portfolio__gallery-slider",
   );
@@ -280,6 +258,39 @@ export default function sliders() {
           slidesPerView: "auto",
         },
       },
+    });
+  }
+
+  const cardProductSliders = document.querySelectorAll(".card-product__slider");
+
+  if (cardProductSliders.length) {
+    cardProductSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 10,
+        pagination: {
+          el: slider.querySelector(".slider-pagination"),
+          clickable: true,
+        },
+      });
+    });
+  }
+
+  const cardAdditionSliders = document.querySelectorAll(
+    ".card-addition__slider",
+  );
+
+  if (cardAdditionSliders.length) {
+    cardAdditionSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        spaceBetween: 10,
+        slidesPerView: "auto",
+        pagination: {
+          el: slider.querySelector(".slider-pagination"),
+          clickable: true,
+        },
+      });
     });
   }
 }

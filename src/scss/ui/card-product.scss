@@ -1,0 +1,130 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.card-product {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--black-l);
+  border-radius: 20px;
+  @include tablet {
+    border-radius: 12px;
+  }
+  &__slider {
+    width: 100%;
+
+    .slider-pagination {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+  }
+  &__slide {
+    border-radius: 20px;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+
+    @include tablet {
+      border-radius: 12px;
+    }
+
+    @include hover {
+      img {
+        transform: scale(1.08);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s linear;
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 30px;
+    @include laptop {
+      padding: 25px;
+    }
+    @include tablet {
+      padding: 20px;
+    }
+    @include tablet-min {
+      padding: 15px;
+    }
+  }
+  &__title {
+    margin: 0px 0px 10px 0px;
+    @include tablet {
+      margin-bottom: 15px;
+    }
+  }
+  &__content {
+    font-size: 15px;
+    color: var(--smoke);
+    line-height: 20px;
+    margin: 0px 0px 10px 0px;
+    @include tablet-min {
+      display: none !important;
+    }
+
+    &._hide {
+      @include overflowText(4);
+    }
+  }
+  &__btn-descr {
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+
+    line-height: 130%;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--primary);
+    margin-bottom: 20px;
+
+    @include hover {
+      text-decoration: none;
+    }
+    @include tablet-min {
+      display: none;
+    }
+  }
+  &__price {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    gap: 10px;
+    row-gap: 5px;
+    .price {
+      font-family: "KanitCyrillic", sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      @include tablet-min {
+        font-size: 14px;
+      }
+    }
+    .note {
+      font-size: 13px;
+      opacity: 0.5;
+      @include tablet-min {
+        font-size: 12px;
+      }
+    }
+  }
+  &__btn {
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+}

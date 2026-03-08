@@ -1,0 +1,118 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.card-addition {
+  display: flex;
+  flex-direction: column;
+  // overflow: hidden;
+  &__slider {
+    width: 100%;
+    margin-bottom: 30px;
+    @include tablet-min {
+      margin-bottom: 15px;
+    }
+    .slider-pagination {
+      position: absolute;
+      left: 50%;
+      bottom: 10px;
+      transform: translateX(-50%);
+      z-index: 10;
+    }
+  }
+  &__slide {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100% !important;
+    aspect-ratio: 1/1;
+
+    @include tablet {
+      border-radius: 12px;
+    }
+    @include tablet-min {
+      aspect-ratio: 1/0.5;
+    }
+
+    @include hover {
+      img {
+        transform: scale(1.08);
+      }
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s linear;
+    }
+  }
+  &__title {
+    margin-bottom: 10px;
+    @include tablet-min {
+      margin-bottom: 15px;
+    }
+  }
+  &__content {
+    color: var(--smoke);
+    margin: 0px 0px 10px 0px;
+    &._hide {
+      @include overflowText(4);
+    }
+
+    @include tablet-min {
+      display: none !important;
+    }
+  }
+  &__btn-descr {
+    display: block;
+    width: fit-content;
+    cursor: pointer;
+
+    line-height: 130%;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    color: var(--primary);
+    margin-bottom: 20px;
+
+    @include hover {
+      text-decoration: none;
+    }
+    @include tablet-min {
+      display: none;
+    }
+  }
+  &__price {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: auto;
+    gap: 10px;
+    row-gap: 5px;
+    @include tablet-min {
+      flex-direction: column;
+      gap: 0;
+    }
+    .price {
+      font-family: "KanitCyrillic", sans-serif;
+      font-size: 20px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      @include tablet-min {
+        font-size: 14px;
+      }
+    }
+    .note {
+      font-size: 13px;
+      opacity: 0.5;
+      @include tablet-min {
+        font-size: 12px;
+      }
+    }
+  }
+  &__btn {
+    margin-top: 20px;
+    @include tablet-min {
+      margin-top: 15px;
+      width: 100%;
+    }
+  }
+}

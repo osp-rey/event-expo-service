@@ -1,5 +1,7 @@
 import "../scss/style.scss";
 import burger from "./files/burger.js";
+import buttonsNote from "./files/buttonsNote.js";
+import cardDescr from "./files/cardDescr.js";
 import headerDropdownTels from "./files/headerDropdownTels.js";
 import inputmask from "./files/inputmask.js";
 import interactiveMap from "./files/interactiveMap.js";
@@ -25,6 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
   inputmask();
   map();
   more();
+  buttonsNote();
+  cardDescr();
 
   AOS.init();
   Fancybox.bind("[data-fancybox]", {

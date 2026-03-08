@@ -25,7 +25,7 @@
       padding-right: 40px;
     }
     @include laptop-min {
-      padding: 40px 40px 200px 40px;
+      padding: 40px 40px 210px 40px;
     }
     @include tablet {
       padding-left: 20px;
@@ -126,8 +126,10 @@
     }
     @include laptop-min {
       position: absolute;
-      right: 0;
-      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 330px;
+      bottom: 10px;
       z-index: -1;
     }
     @include tablet {
