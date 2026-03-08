@@ -1,0 +1,1063 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>EventExpoService</title>
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="shortcut icon" href="favicon.ico" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap&_v=20260308130127" rel="stylesheet" />
+	<link rel="stylesheet" href="./files/aos/aos.min.css?_v=20260308130127">
+	<link rel="stylesheet" href="./files/fancybox/fancybox.min.css?_v=20260308130127">
+	<link rel="stylesheet" href="./files/swiper/swiper.min.css?_v=20260308130127">
+	<link rel="stylesheet" href="css/style.min.css?_v=20260308130127" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body class="body">
+	<header class="header">
+		<div class="container">
+			<div class="header__wrapper">
+				<div class="header__top">
+					<div class="header__top-wrapper">
+						<a href="/" class="header__logo">
+							<img src="img/logo.svg" alt="logo" />
+						</a>
+						<div class="header__form-search">
+							<form action="#" class="form-search">
+								<input placeholder="Поиск по сайту..." type="text" class="form-search__input" />
+								<button type="submit" class="form-search__submit">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon-search"></use>
+									</svg>
+								</button>
+							</form>
+						</div>
+						<div class="header__address">
+							<div class="address">г. Казань, ул. Дубравная , д. 1/104к1</div>
+							<div class="work-time">ежедневно с 08:00 до 20:00</div>
+						</div>
+						<div class="header__social">
+							<div class="header__social-items">
+								<a href="#" target="_blank" rel="nofollow" class="header__social-item">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon-tg"></use>
+									</svg>
+								</a>
+								<a href="#" target="_blank" rel="nofollow" class="header__social-item">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon-max"></use>
+									</svg>
+								</a>
+							</div>
+							<a href="mailto:info@expo-ees.ru" class="header__mail">
+								info@expo-ees.ru
+							</a>
+						</div>
+						<div class="header__tels">
+							<div class="header__tel-btn">
+								<img src="img/tel.svg" alt="icon">
+							</div>
+							<div class="header__tels-grid">
+								<a href="tel:+79872978845" class="header__tel">+7 (987) 297-88-45</a>
+								<a href="tel:+79872978845" class="header__tel">+7 (987) 297-88-45</a>
+								<a href="tel:+79872978845" class="header__tel">+7 (987) 297-88-45</a>
+								<a href="tel:+79872978845" class="header__tel">+7 (987) 297-88-45</a>
+							</div>
+						</div>
+						<div class="header__burger-btn" id="burger-toggle">
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+				</div>
+				<div class="header__bottom">
+					<div class="header__bottom-wrapper">
+						<div class="header__services">
+							<a href="#" class="header__services-btn">
+								<img src="img/points.svg" alt="icon">
+								<span>Наши услуги</span>
+							</a>
+							<div class="header__services-wrapper">
+								<ul class="list header__services-list">
+									<li><a href="#">Аренда шатров и тентовых конструкций</a></li>
+									<li><a href="#">Аренда мультимедийного оборудования</a></li>
+									<li><a href="#">Стандартные выставочные стенды</a></li>
+									<li><a href="#">Аренда холодильного оборудования</a></li>
+									<li><a href="#">Аренда мебели</a></li>
+									<li><a href="#">Аренда климатического оборудования </a></li>
+									<li><a href="#">Сцены, пресс волл, оформление галерей</a></li>
+									<li><a href="#">Аренда дополнительного оборудования</a></li>
+									<li><a href="#">Аренда гардероба</a></li>
+									<li><a href="#">Эксклюзивные выставочные стенды</a></li>
+								</ul>
+							</div>
+						</div>
+						<nav class="header__nav">
+							<ul class="list header__nav-list">
+								<li><a href="#">Главная</a></li>
+								<li><a href="#">Портфолио</a></li>
+								<li><a href="#">Статьи</a></li>
+								<li><a href="#">О компании</a></li>
+								<li><a href="#">Мероприятия</a></li>
+								<li><a href="#">Контакты</a></li>
+							</ul>
+						</nav>
+						<a href="#modal-feedback" data-fancybox class="btn-s header__bottom-btn">Оставить заявку</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<aside>
+		<div class="burger" id="burger">
+			<div class="burger__block">
+				<form action="#" class="form-search _white">
+					<input placeholder="Поиск по сайту..." type="text" class="form-search__input" />
+					<button type="submit" class="form-search__submit">
+						<svg>
+							<use xlink:href="img/icons/icons.svg#icon-search"></use>
+						</svg>
+					</button>
+				</form>
+				<ul class="list burger__list">
+					<li><a href="#">Наши услуги</a></li>
+					<li><a href="#">Главная</a></li>
+					<li><a href="#">Портфолио</a></li>
+					<li><a href="#">Статьи</a></li>
+					<li><a href="#">О компании</a></li>
+					<li><a href="#">Мероприятия</a></li>
+					<li><a href="#">Контакты</a></li>
+				</ul>
+			</div>
+			<div class="burger__block _contacts">
+				<div class="burger__address">
+					<div class="address">г. Казань, ул. Дубравная , д. 1/104к1</div>
+					<div class="work-time">ежедневно с 08:00 до 20:00</div>
+				</div>
+				<a href="mailto:info@expo-ees.ru" class="burger__mail">info@expo-ees.ru</a>
+				<a href="#modal-feedback" data-fancybox class="btn-s burger__btn">Оставить заявку</a>
+			</div>
+		</div>
+	</aside>
+
+	<aside>
+		<div class="modal" id="modal-feedback">
+			<div class="modal__body">
+				<div data-fancybox-close class="modal__close">
+					<svg>
+						<use xlink:href="img/icons/icons.svg#icon-close"></use>
+					</svg>
+				</div>
+				<div class="modal__title s-title">Нужна консультация?</div>
+				<p class="modal__content">
+					Если у Вас есть вопросы или Вы хотите сделать заявку просто заполните
+					контактную форму, и мы ответим вам в ближайшее время.
+				</p>
+				<form action="#" class="modal__form">
+					<div style="display: none;">
+						<input type="text" id="input-feedback-note">
+					</div>
+					<div class="input-control">
+						<input type="text" placeholder="Ваше имя" class="input" />
+					</div>
+					<div class="input-variants">
+						<div class="input-variants__title">Выберите удобный тип связи</div>
+						<span class="wpcf7-form-control-wrap" data-name="radio-719">
+							<span class="wpcf7-form-control wpcf7-radio">
+								<span class="wpcf7-list-item">
+									<label>
+										<input type="radio" name="radio-719" value="Telegram" />
+										<span class="wpcf7-list-item-label">Telegram</span>
+									</label>
+								</span>
+								<span class="wpcf7-list-item first">
+									<label>
+										<input type="radio" name="radio-719" value="Max" checked="checked" />
+										<span class="wpcf7-list-item-label">Max</span>
+									</label>
+								</span>
+								<span class="wpcf7-list-item last">
+									<label>
+										<input type="radio" name="radio-719" value="Звонок" />
+										<span class="wpcf7-list-item-label">Звонок</span>
+									</label>
+								</span>
+							</span>
+						</span>
+					</div>
+					<div class="input-control">
+						<input type="tel" placeholder="Укажите ваш номер телефона" class="input" />
+					</div>
+					<div class="check-wrapper">
+						<span class="wpcf7-form-control-wrap" data-name="acceptance-377">
+							<span class="wpcf7-form-control wpcf7-acceptance">
+								<span class="wpcf7-list-item">
+									<label>
+										<input type="checkbox" name="acceptance-377" value="1" aria-invalid="false" />
+										<span class="wpcf7-list-item-label">
+											<span>
+												Я соглашаюсь с
+												<a href="#" target="_blank">
+													Правилами обработки персональных данных
+												</a>
+											</span>
+										</span>
+									</label>
+								</span>
+							</span>
+						</span>
+					</div>
+					<button type="submit" class="btn-s">Оставить заявку</button>
+				</form>
+			</div>
+		</div>
+	</aside>
+
+	<main>
+
+		<section class="s-hero sect-m">
+			<div class="s-hero__gallery">
+				<div class="inside">
+					<img src="img/intro-service.jpg" alt="image" />
+				</div>
+			</div>
+			<div class="container">
+				<div class="breadcrumbs">
+					<div class="aioseo-breadcrumbs">
+						<span class="aioseo-breadcrumb">
+							<a href="#" title="Главная">Главная</a>
+						</span>
+						<span class="aioseo-breadcrumb-separator">»</span>
+						<span class="aioseo-breadcrumb">
+							<a href="#" title="Наши услуги">Наши услуги</a>
+						</span>
+						<span class="aioseo-breadcrumb-separator">»</span>
+						<span class="aioseo-breadcrumb">
+							Изготовление эксклюзивных выставочных стендов
+						</span>
+					</div>
+				</div>
+				<div class="s-hero__wrapper">
+					<div class="s-hero__body">
+						<h1 data-aos="fade" data-aos-delay="300" class="m-title s-hero__title">
+							Изготовление эксклюзивных выставочных стендов
+						</h1>
+						<p data-aos="fade-right" class="s-hero__content">
+							Выставочный стенд – представляет собой брендированное пространство,
+							выделяемое компании для проведения презентации или продвижения
+							продукции, услуг на территории выставочных центров или других деловых
+							площадок. Стенд– это образ предприятия, создаваемый выставочной
+							компанией исходя из технического задания заказчика.
+						</p>
+						<ul class="list s-hero__list">
+							<li>Создание имиджа компании</li>
+							<li>Возможность в краткие сроки выйти на нужные уровни B2B, B2C</li>
+							<li>Заключение коммерческих договоров «здесь и сейчас»</li>
+							<li>Укрепление статуса компании</li>
+						</ul>
+						<div class="s-hero__note">
+							<div class="val">От 20 000 руб. за кв.м.</div>
+							<div class="text">
+								* Цена ориентировочная и просчитывается индивидуально
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="b-order">
+					<h3 class="b-order__title">Заказать эксклюзивный выставочный стенд</h3>
+					<form action="#" class="b-order__form">
+						<div class="b-order__form-grid">
+							<div class="input-control">
+								<input type="text" placeholder="Ваше имя" class="input" />
+							</div>
+							<div class="input-control">
+								<input type="tel" placeholder="Ваш номер телефона" class="input" />
+							</div>
+							<div class="input-control">
+								<input type="text" placeholder="Укажите ваш город" class="input" />
+							</div>
+							<div type="submit" class="btn-s">Оставить заявку</div>
+						</div>
+						<div class="check-wrapper">
+							<span class="wpcf7-form-control-wrap" data-name="acceptance-377">
+								<span class="wpcf7-form-control wpcf7-acceptance">
+									<span class="wpcf7-list-item">
+										<label>
+											<input type="checkbox" name="acceptance-377" value="1" aria-invalid="false" />
+											<span class="wpcf7-list-item-label">
+												<span>
+													Я соглашаюсь с
+													<a href="#" target="_blank">
+														Правилами обработки персональных данных
+													</a>
+												</span>
+											</span>
+										</label>
+									</span>
+								</span>
+							</span>
+						</div>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<section class="s-static sect _white">
+			<div class="sect-body sect-p">
+				<div class="container">
+					<div class="s-static__grid">
+						<div class="s-static__item">
+							<div class="sect-head">
+								<div data-aos="fade-right" class="sect-head__subtitle">{ что это }</div>
+								<h2 data-aos="fade-right" data-aos-delay="300" class="s-title">об услуге</h2>
+							</div>
+							<div class="content s-static__content">
+								<p>
+									На выставках и конференциях важно привлечь внимание потенциальных
+									клиентов и партнеров. Один из способов это сделать — использовать
+									подвесы на выставочных стендах. Подвесы — это элементы декора,
+									которые крепятся к потолку и могут быть различной формы и размера.
+								</p>
+								<p>
+									Одним из главных преимуществ подвесов является то, что они видны
+									издалека. Это позволяет привлечь внимание посетителей выставки еще
+									до того, как они подойдут к вашему стенду. Кроме того, подвесы
+									могут служить не только для привлечения внимания, но и для
+									передачи информации о вашей компании или продукте. На подвесах
+									можно разместить логотип, слоган, контактную информацию или любую
+									другую информацию, которая поможет привлечь внимание и запомнить
+									вашу компанию.
+								</p>
+							</div>
+						</div>
+						<div class="s-static__item">
+							<div class="sect-head">
+								<div data-aos="fade-right" class="sect-head__subtitle">{ наши преимущества }</div>
+								<h2 data-aos="fade-right" data-aos-delay="300" class="s-title">Что мы предлагаем</h2>
+							</div>
+							<div class="s-static__slider swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide s-static__slide">
+										<img src="img/like.svg" alt="icon" class="icon">
+										<div class="text">Безупречное качество</div>
+									</div>
+									<div class="swiper-slide s-static__slide">
+										<img src="img/like.svg" alt="icon" class="icon">
+										<div class="text">Оперативность и точность</div>
+									</div>
+									<div class="swiper-slide s-static__slide">
+										<img src="img/like.svg" alt="icon" class="icon">
+										<div class="text">Полный цикл услуг</div>
+									</div>
+									<div class="swiper-slide s-static__slide">
+										<img src="img/like.svg" alt="icon" class="icon">
+										<div class="text">Безупречное качество</div>
+									</div>
+									<div class="swiper-slide s-static__slide">
+										<img src="img/like.svg" alt="icon" class="icon">
+										<div class="text">Оперативность и точность</div>
+									</div>
+									<div class="swiper-slide s-static__slide">
+										<img src="img/like.svg" alt="icon" class="icon">
+										<div class="text">Полный цикл услуг</div>
+									</div>
+								</div>
+							</div>
+							<div class="slider-arrows">
+								<div class="slider-arrow _prev _gray-l">
+									<svg>
+										<use xlink:href='img/icons/icons.svg#icon-prev'></use>
+									</svg>
+								</div>
+								<div class="slider-arrow _next _gray-l">
+									<svg>
+										<use xlink:href='img/icons/icons.svg#icon-next'></use>
+									</svg>
+								</div>
+							</div>
+							<div class="slider-pagination _lap _dark"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="s-price sect _black-l">
+			<div class="sect-body sect-p">
+				<div class="container">
+					<div class="sect-head">
+						<div data-aos="fade-right" class="sect-head__subtitle">{ прайс }</div>
+						<h2 data-aos="fade-right" data-aos-delay="300" class="s-title">Стоимость эксклюзивного выставочного стенда</h2>
+					</div>
+					<div data-count-show="4" class="container-more">
+						<div class="s-price__table-wrapper">
+							<div class="s-price__table">
+								<div class="s-price__table-head">
+									<div class="row">
+										<div class="cell">Услуга</div>
+										<div class="cell">Стоимость, без учета НДС</div>
+										<div class="cell">Средний срок выполнения</div>
+									</div>
+								</div>
+								<div class="s-price__table-body">
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+									<div data-more-item class="row">
+										<div class="cell">Одноэтажный эксклюзивный стенд</div>
+										<div class="cell">от 20 000 руб. за кв. метр</div>
+										<div class="cell">от 4 до 7 дней</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div data-more-btn class="btn-o btn-more _smoke">Показать еще</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="s-steps sect-m">
+			<div class="container">
+				<div class="sect-head">
+					<div data-aos="fade" class="sect-head__subtitle">{ что мы делаем }</div>
+					<h2 data-aos="fade-right" data-aos-delay="300" class="s-title">
+						Мы оказываем полный комплекс услуг
+					</h2>
+				</div>
+				<div class="swiper s-steps__slider">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide s-steps__item">
+							<div class="num">1</div>
+							<div class="text">Разработка дизайн-проекта выставочного стенда</div>
+						</div>
+						<div class="swiper-slide s-steps__item">
+							<div class="num">2</div>
+							<div class="text">Менеджерское сопровождение проекта</div>
+						</div>
+						<div class="swiper-slide s-steps__item">
+							<div class="num">3</div>
+							<div class="text">Дизайнерское сопровождение на всех стадиях</div>
+						</div>
+						<div class="swiper-slide s-steps__item">
+							<div class="num">4</div>
+							<div class="text">Выполнение всех работ по оформлению выставочного стенда</div>
+						</div>
+						<div class="swiper-slide s-steps__item">
+							<div class="num">5</div>
+							<div class="text">Строительство выставочной экспозиции «под ключ»</div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-pagination _lap"></div>
+			</div>
+		</section>
+
+		<section class="s-portfolio sect _white">
+			<div class="sect-body sect-p">
+				<div class="container">
+					<div class="sect-head">
+						<div data-aos="fade-right" data-aos-delay="300" class="sect-head__subtitle">
+							{ результат }
+						</div>
+						<div data-aos="fade-right" data-aos-duration="300" data-aos-delay="300" class="s-title">
+							Примеры уличных выставочных стендов
+						</div>
+					</div>
+					<div class="s-portfolio__gallery">
+						<div class="swiper s-portfolio__gallery-slider">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide s-portfolio__gallery-slide">
+									<div class="card-portfolio">
+										<div class="swiper card-portfolio__slider">
+											<div class="swiper-wrapper">
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+											</div>
+										</div>
+										<div class="card-portfolio__body">
+											<span class="title">
+												Золотая осень 2025, Москва, Тимирязев центр
+											</span>
+											<div class="slider-arrows">
+												<div class="slider-arrow _prev">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-prev"></use>
+													</svg>
+												</div>
+												<div class="slider-arrow _next">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-next"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide s-portfolio__gallery-slide">
+									<div class="card-portfolio">
+										<div class="swiper card-portfolio__slider">
+											<div class="swiper-wrapper">
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+											</div>
+										</div>
+										<div class="card-portfolio__body">
+											<span class="title">
+												Золотая осень 2025, Москва, Тимирязев центр
+											</span>
+											<div class="slider-arrows">
+												<div class="slider-arrow _prev">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-prev"></use>
+													</svg>
+												</div>
+												<div class="slider-arrow _next">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-next"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide s-portfolio__gallery-slide">
+									<div class="card-portfolio">
+										<div class="swiper card-portfolio__slider">
+											<div class="swiper-wrapper">
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+											</div>
+										</div>
+										<div class="card-portfolio__body">
+											<span class="title">
+												Золотая осень 2025, Москва, Тимирязев центр
+											</span>
+											<div class="slider-arrows">
+												<div class="slider-arrow _prev">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-prev"></use>
+													</svg>
+												</div>
+												<div class="slider-arrow _next">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-next"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="swiper-slide s-portfolio__gallery-slide">
+									<div class="card-portfolio">
+										<div class="swiper card-portfolio__slider">
+											<div class="swiper-wrapper">
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-1.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-1.jpg" alt="image" />
+												</a>
+												<a href="img/portfolio-2.jpg" data-fancybox class="swiper-slide card-portfolio__slide">
+													<img src="img/portfolio-2.jpg" alt="image" />
+												</a>
+											</div>
+										</div>
+										<div class="card-portfolio__body">
+											<span class="title">
+												Золотая осень 2025, Москва, Тимирязев центр
+											</span>
+											<div class="slider-arrows">
+												<div class="slider-arrow _prev">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-prev"></use>
+													</svg>
+												</div>
+												<div class="slider-arrow _next">
+													<svg>
+														<use xlink:href="img/icons/icons.svg#icon-next"></use>
+													</svg>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="slider-arrow _next _big _gray s-portfolio__gallery-next">
+							<svg>
+								<use xlink:href="img/icons/icons.svg#icon-next"></use>
+							</svg>
+						</div>
+					</div>
+					<div class="slider-pagination _dark _lap"></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="s-projects sect-m">
+			<div class="container">
+				<div class="s-projects__wrapper">
+					<div class="s-projects__info">
+						<div class="sect-head">
+							<div data-aos="fade-right" class="sect-head__subtitle">{ проекты }</div>
+							<h2 data-aos="fade-right" data-aos-delay="300" class="s-title">
+								Примеры проектов выставочных стендов
+							</h2>
+						</div>
+						<div class="slider-arrows">
+							<div class="slider-arrow _prev _black-l">
+								<svg>
+									<use xlink:href='img/icons/icons.svg#icon-prev'></use>
+								</svg>
+							</div>
+							<div class="slider-arrow _next _black-l">
+								<svg>
+									<use xlink:href='img/icons/icons.svg#icon-next'></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+					<div class="swiper s-projects__slider">
+						<div class="swiper-wrapper">
+							<a href="img/project.jpg" data-fancybox="gallery-project" class="swiper-slide">
+								<img src="img/project.jpg" alt="image">
+							</a>
+							<a href="img/project.jpg" data-fancybox="gallery-project" class="swiper-slide">
+								<img src="img/project.jpg" alt="image">
+							</a>
+							<a href="img/project.jpg" data-fancybox="gallery-project" class="swiper-slide">
+								<img src="img/project.jpg" alt="image">
+							</a>
+							<a href="img/project.jpg" data-fancybox="gallery-project" class="swiper-slide">
+								<img src="img/project.jpg" alt="image">
+							</a>
+							<a href="img/project.jpg" data-fancybox="gallery-project" class="swiper-slide">
+								<img src="img/project.jpg" alt="image">
+							</a>
+							<a href="img/project.jpg" data-fancybox="gallery-project" class="swiper-slide">
+								<img src="img/project.jpg" alt="image">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="slider-pagination _lap"></div>
+			</div>
+		</section>
+
+		<section class="sect-m s-connect">
+			<div class="container">
+				<div class="s-connect__body">
+					<div class="s-connect__info">
+						<div class="sect-head s-connect__head">
+							<div data-aos="fade-right" class="sect-head__subtitle">{ свяжитесь с нами }</div>
+							<h2 data-aos="fade-right" data-aos-delay="200" class="s-title s-connect__title">
+								Заказать выставочный стенд
+							</h2>
+						</div>
+						<p class="s-connect__descr">
+							Также как начало повседневной работы по формированию позиции
+							обеспечивает широкому кругу (специалистов) участие в формировании
+							соответствующих условий активизации.
+						</p>
+						<a href="#modal-feedback" data-fancybox class="btn-s s-connect__btn">
+							Оставить заявку
+						</a>
+					</div>
+					<img src="img/connect-order.png" alt="image" class="s-connect__img">
+				</div>
+			</div>
+		</section>
+
+		<section class="s-about sect _black-l">
+			<div class="sect-body s-about__body sect-p">
+				<div class="circle-decor">
+					<div class="wrap">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+				<div class="container">
+					<div class="s-about__wrapper">
+						<div class="s-about__info">
+							<img src="img/logo.svg" alt="logo" class="s-about__logo" />
+							<div class="sect-head s-about__sect-head">
+								<div data-aos="fade" data-aos-delay="300" class="sect-head__subtitle">
+									{ о нас }
+								</div>
+								<h1 data-aos="fade-right" data-aos-duration="600" data-aos-delay="400" class="s-title">
+									ИвентЭкспоСервис
+								</h1>
+							</div>
+							<p class="s-about__content">
+								Мы проведем Ваше мероприятие по самым высоким стандартам качества.
+								Ваши гости останутся довольны, а Вы будете избавлены от необходимости
+								покупки дорогостоящего оборудования.
+							</p>
+							<a href="#" class="btn-o _dark s-about__btn">Подробнее о нас</a>
+						</div>
+						<div class="s-about__player video-player" style="
+            background: url(&quot;img/about.jpg&quot;) center / cover no-repeat;
+          ">
+							<video data-src="./files/video.mp4" playsinline controls class="video"></video>
+							<div class="btn-play">
+								<div class="inside">
+									<svg>
+										<use xlink:href="img/icons/icons.svg#icon-play"></use>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="s-about__adv">
+						<article data-aos="fade-up" data-aos-delay="200" class="s-about__adv-item">
+							<h3 class="s-about__adv-title t-title text-linear">
+								Быстрые сроки изготовления и поставки
+							</h3>
+							<p class="s-about__adv-content">
+								Время от создания макета до застройки вашего выставочного стенда
+								минимально, сопровождение проекта на всех этапах гарантия качества и
+								скорости выполнения работы
+							</p>
+							<img src="img/about-adv.svg" alt="image" class="s-about__adv-icon" />
+						</article>
+						<article data-aos="fade-up" data-aos-delay="400" class="s-about__adv-item">
+							<h3 class="s-about__adv-title t-title text-linear">
+								Любое оборудование в наличии
+							</h3>
+							<p class="s-about__adv-content">
+								Всегда в наличии необходимое Вам количество мебели и шатров в аренду
+								на складе в Казани. Большой парк сопутствующего оборудования
+							</p>
+							<img src="img/about-adv.svg" alt="image" class="s-about__adv-icon" />
+						</article>
+						<article data-aos="fade-up" data-aos-delay="600" class="s-about__adv-item">
+							<h3 class="s-about__adv-title t-title text-linear">
+								Собственное производство
+							</h3>
+							<p class="s-about__adv-content">
+								Мы не размещаем заказы на стороне, все изготовление происходит на
+								наших производственных мощностях, и мы отвечаем за качество того, что
+								мы делаем
+							</p>
+							<img src="img/about-adv.svg" alt="image" class="s-about__adv-icon" />
+						</article>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="s-partners sect _black _top">
+			<div class="sect-body sect-p ">
+				<div class="container">
+					<div class="sect-head _center">
+						<div data-aos="fade" class="sect-head__subtitle _center">{ наши клиенты }</div>
+						<h2 data-aos="fade" data-aos-delay="200" class="s-title">Нам доверяют впечатления</h2>
+					</div>
+					<div class="swiper s-partners__slider">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+							<div class="swiper-slide s-partners__slide">
+								<img src="img/partner.png" alt="logo">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="s-reviews sect _white">
+			<div class="sect-body sect-p">
+				<div class="container">
+					<div class="sect-head">
+						<div data-aos="fade-right" class="sect-head__subtitle">{ отзывы }</div>
+						<h2 data-aos="fade-right" data-aos-delay="300" class="s-title">Что о нас говорят</h2>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="s-consult sect-m">
+			<div class="container">
+				<div class="s-consult__body">
+					<div class="s-consult__info">
+						<div class="sect-head">
+							<div data-aos="fade-right" class="sect-head__subtitle">{ свяжитесь с нами }</div>
+							<h2 data-aos="fade-right" data-aos-delay="300" class="s-title">Заказать выставочный стенд</h2>
+						</div>
+						<div class="s-consult__content">
+							Свяжитесь с нами для расчета и заказа стенда
+						</div>
+					</div>
+					<form action="#" class="s-consult__form">
+						<div class="input-control">
+							<input type="text" placeholder="Ваше имя" class="input" />
+						</div>
+						<div class="input-variants">
+							<div class="input-variants__title">Выберите удобный тип связи</div>
+							<span class="wpcf7-form-control-wrap" data-name="radio-719">
+								<span class="wpcf7-form-control wpcf7-radio">
+									<span class="wpcf7-list-item">
+										<label>
+											<input type="radio" name="radio-712" value="Telegram" />
+											<span class="wpcf7-list-item-label">Telegram</span>
+										</label>
+									</span>
+									<span class="wpcf7-list-item first">
+										<label>
+											<input type="radio" name="radio-712" value="Max" checked="checked" />
+											<span class="wpcf7-list-item-label">Max</span>
+										</label>
+									</span>
+									<span class="wpcf7-list-item last">
+										<label>
+											<input type="radio" name="radio-712" value="Звонок" />
+											<span class="wpcf7-list-item-label">Звонок</span>
+										</label>
+									</span>
+								</span>
+							</span>
+						</div>
+						<div class="input-control">
+							<input type="tel" placeholder="Укажите ваш номер телефона" class="input" />
+						</div>
+						<div class="check-wrapper _white">
+							<span class="wpcf7-form-control-wrap" data-name="acceptance-377">
+								<span class="wpcf7-form-control wpcf7-acceptance">
+									<span class="wpcf7-list-item">
+										<label>
+											<input type="checkbox" name="acceptance-377" value="1" aria-invalid="false" />
+											<span class="wpcf7-list-item-label">
+												<span>
+													Я соглашаюсь с
+													<a href="#" target="_blank">
+														Правилами обработки персональных данных
+													</a>
+												</span>
+											</span>
+										</label>
+									</span>
+								</span>
+							</span>
+						</div>
+						<button type="submit" class="btn-s">Оставить заявку</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+
+	</main>
+	<footer class="footer">
+		<div class="container">
+			<a href="/" class="footer__logo">
+				<img src="img/logo.svg" alt="logo" />
+			</a>
+			<div class="footer__wrapper">
+				<div class="footer__grid">
+					<div class="footer__grid-item">
+						<div class="footer__title">{ телефон для связи }</div>
+						<a href="tel:+79872978845" class="footer__tel">+7 (987) 297-88-45</a>
+					</div>
+					<div class="footer__grid-item">
+						<div class="footer__title">{ мессенджеры }</div>
+						<div class="social">
+							<a href="#" target="_blank" rel="nofollow" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#icon-tg"></use>
+								</svg>
+							</a>
+							<a href="#" target="_blank" rel="nofollow" class="social-item">
+								<svg>
+									<use xlink:href="img/icons/icons.svg#icon-max"></use>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="footer__grid-item">
+						<div class="footer__title">{ телефон для связи }</div>
+						<div class="footer__grid-val">ул. Дубравная, д. 1/104к1</div>
+						<div class="footer__grid-note">ежедневно с 08:00 до 20:00</div>
+					</div>
+					<div class="footer__grid-item">
+						<div class="footer__title">{ почта }</div>
+						<a href="mailto:info@expo-ees.ru" class="footer__grid-val">
+							info@expo-ees.ru
+						</a>
+					</div>
+				</div>
+				<div class="footer__nav">
+					<div class="footer__nav-item">
+						<div class="footer__title">{ услуги }</div>
+						<ul class="list footer__list">
+							<li><a href="#">Эксклюзивные выставочные стенды</a></li>
+							<li><a href="#">Аренда шатров</a></li>
+							<li>
+								<a href="#">Аренда мебели под мероприятия и выставочные стенды</a>
+							</li>
+							<li><a href="#">Оформление мероприятий</a></li>
+							<li><a href="#">Широкоформатная печать + ЧПУ резка</a></li>
+						</ul>
+					</div>
+					<div class="footer__nav-item">
+						<div class="footer__title">{ о компании }</div>
+						<ul class="list footer__list">
+							<li><a href="#">О нас</a></li>
+							<li><a href="#">Портфолио</a></li>
+							<li><a href="#">Статьи</a></li>
+							<li><a href="#">Мероприятя</a></li>
+							<li><a href="#">Контакты</a></li>
+							<li><a href="#">Оставить заявку</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<ul class="list footer__info-list">
+				<li><a href="#">Политика конфиденциальности</a></li>
+				<li><a href="#">Согласие на обработку персональных данных</a></li>
+			</ul>
+			<div class="footer__bottom">
+				<div class="footer__bottom-content">
+					© «Ивент Экспо Сервис», 2026. Изготовление выставочных стендов. Аренда
+					шатров и тентовых конструкций в Казани и по всему Поволжью. Прокат
+					мебели.
+				</div>
+				<a href="https://qorix.ru/" target="_blank" class="footer__dev">
+					<span>Разработка сайта —</span>
+					<img src="img/qorix.svg" alt="image">
+				</a>
+			</div>
+			На сайте использованы видео с ресурса
+			<a href="https://www.freepik.com/">Freepik</a>
+		</div>
+	</footer>
+
+	<script src="./files/aos/aos.min.js?_v=20260308130127"></script>
+	<script src="./files/fancybox/fancybox.min.js?_v=20260308130127"></script>
+	<script src="./files/swiper/swiper.min.js?_v=20260308130127"></script>
+	<script src="./files/inputmask/inputmask.min.js?_v=20260308130127"></script>
+
+	<script src="js/app.min.js?_v=20260308130127"></script>
+</body>
+
+</html>

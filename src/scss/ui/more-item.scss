@@ -1,0 +1,15 @@
+[data-more-item] {
+  display: none;
+  transform: translateY(20px);
+  opacity: 0;
+
+  transition: transform .3s ease, transform .4s ease;
+
+  &._active {
+    display: block;
+  }
+  &._show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

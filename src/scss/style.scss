@@ -30,6 +30,8 @@
 @use "./ui/social";
 @use "./ui/breadcrumbs";
 @use "./ui/content";
+@use "./ui/more-item";
+@use "./ui/card-portfolio";
 
 // components
 @use "./components/header";
@@ -53,5 +55,7 @@
 @use "./components/b-order";
 @use "./components/s-static";
 @use "./components/s-price";
+@use "./components/s-steps";
+@use "./components/s-projects";
 
 @use "./components/footer";

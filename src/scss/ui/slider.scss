@@ -55,6 +55,10 @@
   display: flex;
   gap: 10px;
   flex-shrink: 0;
+
+  @include laptop-min {
+    display: none;
+  }
 }
 .slider-arrow {
   --background: rgba(26, 29, 34, 0.3);
@@ -120,8 +124,8 @@
     --background: rgba(26, 29, 34, 0.1);
     --border: rgba(26, 29, 34, 00);
     --color: black;
-    --background-h: rgba(136, 154, 187, 0.5);
-    --border-h: rgba(26, 29, 34, 0.5);
+    --background-h: var(--primary);
+    --border-h: var(--primary);
     --color-h: white;
 
     backdrop-filter: none;

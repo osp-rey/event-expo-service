@@ -9,7 +9,7 @@ export default function portfolioMore() {
         tab.querySelectorAll(".s-portfolio__item"),
       ).filter((item) => window.getComputedStyle(item).display === "none");
 
-      if (hideItems.length === 0) btnMore.remove();
+      if (hideItems.length <= 0) btnMore.remove();
 
       btnMore.addEventListener("click", () => {
         const hideItems = Array.from(

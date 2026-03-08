@@ -18,6 +18,7 @@
       #0a0b0b 100%
     );
     z-index: 1;
+    min-height: 475px;
 
     @include laptop-middle {
       padding-left: 40px;
@@ -114,6 +115,23 @@
       @include laptop-min {
         width: 220px;
       }
+    }
+  }
+  &__img {
+    display: block;
+    width: 505px;
+    pointer-events: none;
+    @include desktop {
+      width: 400px;
+    }
+    @include laptop-min {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    @include tablet {
+      width: 300px;
     }
   }
 

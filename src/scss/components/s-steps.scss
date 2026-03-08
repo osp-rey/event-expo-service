@@ -1,0 +1,76 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
+.s-steps {
+  @include laptop-min {
+    overflow: hidden;
+  }
+  &__slider {
+    @include laptop-min {
+      overflow: visible !important;
+    }
+    .swiper-wrapper {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      row-gap: 40px;
+      @include desktop-big {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      @include laptop-middle {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include laptop-min {
+        display: flex !important;
+        gap: 0;
+      }
+    }
+  }
+  &__item {
+    position: relative;
+    padding-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    height: auto !important;
+    z-index: 1;
+
+    @include laptop-min {
+      width: 345px !important;
+      max-width: 100%;
+    }
+
+    .num {
+      position: absolute;
+      top: 0;
+      font-family: "KanitCyrillic", sans-serif;
+      font-size: 150px;
+      line-height: 100%;
+      line-height: 100%;
+      color: var(--black);
+       -webkit-text-stroke: 1px rgba(0, 170, 226, 0.7);
+      text-shadow:
+        0 0 10px rgba(0, 170, 226, 0.7),
+        0 0 20px rgba(0, 170, 226, 0.4);
+      z-index: -1;
+    }
+    .text {
+      padding: 40px;
+      margin-top: auto;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      backdrop-filter: blur(5px);
+      background: rgba(26, 29, 34, 0.7);
+
+      font-size: 20px;
+
+      flex: 1;
+
+      @include laptop {
+        padding: 30px;
+        font-size: 18px;
+      }
+    }
+  }
+}

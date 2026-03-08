@@ -1,0 +1,81 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-projects {
+  @include laptop-min {
+    overflow: hidden;
+  }
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+    @include laptop {
+      display: block;
+    }
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 500px;
+    flex-shrink: 0;
+
+    @include desktop {
+      width: 400px;
+    }
+    @include laptop {
+      width: 100%;
+      margin-bottom: 30px;
+      .sect-head {
+        margin-bottom: 0;
+      }
+
+      .slider-arrows {
+        margin-top: 20px;
+        margin-left: auto;
+      }
+    }
+  }
+  &__slider {
+    flex: 1;
+    margin: -20px !important;
+    padding: 20px !important;
+
+    @include laptop-min {
+      overflow: visible !important;
+      width: 100%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    
+    .swiper-slide {
+      border-radius: 16px;
+      overflow: hidden;
+      aspect-ratio: 1/0.6;
+
+      transition: box-shadow 0.3s ease;
+
+      @include hover {
+        box-shadow: 0 0 20px 0 rgba(0, 134, 255, 0.5);
+      }
+      @include laptop-min {
+        width: 450px !important;
+        max-width: 100%;
+        border-radius: 12px;
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .slider-pagination {
+    margin-top: 30px;
+  }
+}

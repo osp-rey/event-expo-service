@@ -1,10 +1,68 @@
+@use '../base/templates' as *;
+@use '../base/media' as *;
+
 .s-price {
+  @include tablet {
+    overflow: hidden;
+  }
   &__table-wrapper {
+    @include tablet {
+      overflow-x: auto;
+      margin: 0 -10px;
+      padding: 0 10px;
+    }
   }
   &__table {
+    @include tablet  {
+      width: 750px;
+    }
+    .row {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      padding: 20px 30px;
+      @include laptop-middle {
+        padding: 20px;
+      }
+      @include laptop-min {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @include tablet {
+        padding: 15px;
+      }
+
+      &:nth-child(-n + 4) {
+        display: grid !important;
+        opacity: 1;
+        transform: translateY(0);
+      }
+      &._active {
+        display: grid !important;
+      }
+    }
+    .cell {
+      &:first-child {
+        grid-column: 2 span;
+      }
+      @include laptop-middle {
+        font-size: 16px;
+      }
+      @include laptop-min {
+        &:first-child {
+          grid-column: 1 span;
+        }
+      }
+      @include tablet {
+        font-size: 15px;
+      }
+    }
   }
   &__table-head {
+    border-radius: 60px;
+    background-color: var(--raven);
   }
   &__table-body {
+    .row {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
   }
 }
