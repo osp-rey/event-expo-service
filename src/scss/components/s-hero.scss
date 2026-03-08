@@ -4,9 +4,12 @@
 .s-hero {
   position: relative;
   padding-top: 190px;
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   overflow: hidden;
   z-index: 1;
+  margin-top: 0 !important;
   @include desktop {
     padding-top: 170px;
   }
@@ -24,6 +27,11 @@
     @include tablet-min {
       margin: 0px -15px;
     }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
   &__gallery {
     position: absolute;
@@ -70,7 +78,11 @@
           );
         }
         @include tablet-min {
-          background: linear-gradient(270deg, rgba(15, 17, 21, 0) 30%, #0f1115 100%);
+          background: linear-gradient(
+            270deg,
+            rgba(15, 17, 21, 0) 30%,
+            #0f1115 100%
+          );
         }
       }
       &::after {
@@ -87,7 +99,11 @@
           );
         }
         @include tablet-min {
-          background: linear-gradient(180deg, #0f1115 0%, rgba(15, 17, 21, 0) 70%);
+          background: linear-gradient(
+            180deg,
+            #0f1115 0%,
+            rgba(15, 17, 21, 0) 70%
+          );
         }
       }
     }
@@ -239,6 +255,71 @@
     gap: 10px;
     @include tablet-min {
       display: none;
+    }
+  }
+  &__btn {
+    margin-top: 40px;
+    @include laptop-min {
+      margin-top: 30px;
+    }
+    @include tablet-min {
+      margin-top: 20px;
+      width: 100%;
+    }
+  }
+  &__adv {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: auto;
+    padding: 40px 0px 10px 0px;
+    @include laptop-middle {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include laptop-min {
+      padding: 30px 0px 0px 0px;
+    }
+    @include tablet-min {
+      grid-template-columns: 1fr;
+      padding-top: 0;
+    }
+  }
+  &__adv-item {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 15px 20px;
+
+    backdrop-filter: blur(15px);
+    background: rgba(26, 29, 34, 0.7);
+
+    .rect {
+      width: 16px;
+      height: 16px;
+      background: linear-gradient(196deg, #00f5ff 0%, #0086ff 100%);
+      box-shadow: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+      transform: rotate(45deg);
+      margin-bottom: 15px;
+
+      @include tablet {
+        width: 12px;
+        height: 12px;
+        margin-bottom: 10px;
+      }
+    }
+    .title {
+      display: block;
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 5px;
+      @include laptop-min {
+        font-size: 18px;
+      }
+      @include tablet {
+        font-size: 16px;
+      }
+    }
+    .text {
+      color: var(--smoke);
     }
   }
 }
