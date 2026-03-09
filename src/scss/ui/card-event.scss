@@ -7,6 +7,16 @@
   border-radius: 20px;
   background-color: var(--light);
   height: 100%;
+  overflow: hidden;
+
+  &._dark {
+    background-color: var(--black-l);
+
+    .card-event__content {
+      color: var(--smoke);
+    }
+  }
+
   &__slider {
     width: 100%;
     .slider-arrow {

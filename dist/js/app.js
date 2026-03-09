@@ -574,6 +574,24 @@
                 }
             });
         }
+        const eventSlider = document.querySelector(".s-event__slider");
+        if (eventSlider) {
+            new Swiper(eventSlider, {
+                spaceBetween: 15,
+                speed: 900,
+                autoplay: {
+                    delay: 4500
+                },
+                navigation: {
+                    prevEl: ".s-event .slider-arrow._prev",
+                    nextEl: ".s-event .slider-arrow._next"
+                },
+                pagination: {
+                    el: ".s-event .slider-pagination",
+                    clickable: true
+                }
+            });
+        }
     }
     function spoller() {
         const spollersArray = document.querySelectorAll("[data-spollers]");
@@ -787,6 +805,19 @@
             });
         });
     }
+    function textToggle() {
+        const buttons = document.querySelectorAll("[data-btn-text-toggle]");
+        if (buttons.length) buttons.forEach(btn => {
+            const text = document.querySelector(`[data-text-toggle="${btn.dataset.btnTextToggle}"]`);
+            const lineHeight = +window.getComputedStyle(text).lineHeight.slice(0, 2);
+            const rows = +text.dataset.rows;
+            if (text.clientHeight <= lineHeight * rows) btn.remove(); else text.classList.add("_hide");
+            btn.addEventListener("click", () => {
+                text.classList.remove("_hide");
+                btn.remove();
+            });
+        });
+    }
     function videoBg() {
         const players = document.querySelectorAll(".video-bg");
         if (players.length) players.forEach(player => {
@@ -833,6 +864,7 @@
         more();
         buttonsNote();
         cardDescr();
+        textToggle();
         AOS.init();
         Fancybox.bind("[data-fancybox]", {
             closeButton: false

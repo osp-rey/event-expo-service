@@ -11,6 +11,7 @@ import portfolioMore from "./files/portfolioMore.js";
 import sliders from "./files/sliders.js";
 import spoller from "./files/spoller.js";
 import tab from "./files/tab.js";
+import textToggle from "./files/textToggle.js";
 import videoBg from "./files/videoBg.js";
 import videoPlayer from "./files/videoPlayer.js";
 
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
   more();
   buttonsNote();
   cardDescr();
+  textToggle();
 
   AOS.init();
   Fancybox.bind("[data-fancybox]", {

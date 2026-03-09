@@ -397,4 +397,24 @@ export default function sliders() {
       },
     });
   }
+
+  const eventSlider = document.querySelector(".s-event__slider");
+
+  if (eventSlider) {
+    const swiper = new Swiper(eventSlider, {
+      spaceBetween: 15,
+      speed: 900,
+      autoplay: {
+        delay: 4500
+      },
+      navigation: {
+        prevEl: ".s-event .slider-arrow._prev",
+        nextEl: ".s-event .slider-arrow._next"
+      },
+      pagination: {
+        el: ".s-event .slider-pagination",
+        clickable: true
+      }
+    })
+  }
 }

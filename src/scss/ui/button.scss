@@ -124,6 +124,17 @@
     --color-h: white;
     --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
   }
+  &._border-dark {
+    --border: rgba(255, 255, 255, 0.1);
+    --background: rgba(26, 29, 34, 0.7);
+    --color: white;
+    --box-shadow: none;
+
+    --border-h: var(--primary-d);
+    --background-h: var(--black-l);
+    --color-h: white;
+    --box-shadow-h: 0 0 15px 0 rgba(0, 170, 226, 0.7);
+  }
   &._smoke {
     --border: rgba(255, 255, 255, 0.1);
     --background: transparent;
@@ -199,5 +210,22 @@
 
   &[disabled] {
     pointer-events: none;
+  }
+}
+
+.btn-simple {
+  display: block;
+  width: fit-content;
+  cursor: pointer;
+
+  font-size: 15px;
+  line-height: 130%;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+
+  color: var(--primary);
+
+  @include hover {
+    text-decoration: none;
   }
 }
