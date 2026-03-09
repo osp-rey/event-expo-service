@@ -527,6 +527,9 @@
                 thumbs: {
                     swiper: thumbSwiper
                 },
+                autoplay: {
+                    delay: 5e3
+                },
                 breakpoints: {
                     1680: {
                         spaceBetween: 120,
@@ -535,6 +538,38 @@
                     992: {
                         spaceBetween: 80,
                         slidesPerView: 1
+                    }
+                }
+            });
+        }
+        const teamSlider = document.querySelector(".s-team__slider");
+        if (teamSlider) {
+            new Swiper(teamSlider, {
+                speed: 900,
+                spaceBetween: 15,
+                slidesPerView: "auto",
+                autoplay: {
+                    delay: 4e3
+                },
+                navigation: {
+                    nextEl: ".s-team .slider-arrow._next"
+                },
+                pagination: {
+                    el: ".s-team .slider-pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    1540: {
+                        spaceBetween: 40,
+                        slidesPerView: 4
+                    },
+                    1200: {
+                        spaceBetween: 20,
+                        slidesPerView: 4
+                    },
+                    768: {
+                        spaceBetween: 20,
+                        slidesPerView: 3
                     }
                 }
             });

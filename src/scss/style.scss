@@ -34,6 +34,7 @@
 @use "./ui/card-portfolio";
 @use "./ui/card-product";
 @use "./ui/card-addition";
+@use "./ui/card-team";
 
 // components
 @use "./components/header";
@@ -64,5 +65,6 @@
 @use "./components/s-overview";
 @use "./components/s-history";
 @use "./components/s-team";
+@use "./components/s-adv";
 
 @use "./components/footer";

@@ -1,0 +1,67 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-adv {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    @include laptop-middle {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    @include tablet {
+      gap: 10px;
+    }
+  }
+  &__item {
+    position: relative;
+    border-radius: 20px;
+    padding: 40px;
+    min-height: 320px;
+    overflow: hidden;
+    padding-bottom: 100px;
+    background: linear-gradient(180deg, #252a32 0%, #213345 100%);
+    z-index: 1;
+
+    @include laptop {
+      padding: 30px;
+    }
+    @include laptop-middle {
+      width: calc(50% - 10px);
+    }
+    @include laptop-min {
+      padding: 25px;
+    }
+    @include tablet {
+      padding: 20px;
+      width: 100%;
+      min-height: auto;
+      padding-bottom: 80px;
+    }
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__content {
+    color: var(--smoke);
+    margin: 0;
+  }
+  &__icon {
+    position: absolute;
+    right: 25px;
+    bottom: -20px;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(0, 170, 226, 0.7));
+    width: 100px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+
+    @include tablet {
+      right: 20px;
+      width: 80px;
+    }
+  }
+}

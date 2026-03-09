@@ -348,9 +348,9 @@ export default function sliders() {
       thumbs: {
         swiper: thumbSwiper,
       },
-      // autoplay: {
-      //   delay: 5000,
-      // },
+      autoplay: {
+        delay: 5000,
+      },
       breakpoints: {
         1680: {
           spaceBetween: 120,
@@ -359,6 +359,40 @@ export default function sliders() {
         992: {
           spaceBetween: 80,
           slidesPerView: 1,
+        },
+      },
+    });
+  }
+
+  const teamSlider = document.querySelector(".s-team__slider");
+
+  if (teamSlider) {
+    const swiper = new Swiper(teamSlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 4000,
+      },
+      navigation: {
+        nextEl: ".s-team .slider-arrow._next",
+      },
+      pagination: {
+        el: ".s-team .slider-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        1540: {
+          spaceBetween: 40,
+          slidesPerView: 4,
+        },
+        1200: {
+          spaceBetween: 20,
+          slidesPerView: 4,
+        },
+        768: {
+          spaceBetween: 20,
+          slidesPerView: 3,
         },
       },
     });

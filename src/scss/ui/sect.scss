@@ -123,6 +123,9 @@
       border-radius: 0 !important;
     }
   }
+  &._black {
+    --background: var(--black);
+  }
   &._black-l {
     --background: var(--black-l);
   }
