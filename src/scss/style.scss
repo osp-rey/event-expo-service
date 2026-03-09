@@ -35,6 +35,7 @@
 @use "./ui/card-product";
 @use "./ui/card-addition";
 @use "./ui/card-team";
+@use "./ui/card-show";
 
 // components
 @use "./components/header";
@@ -68,5 +69,8 @@
 @use "./components/s-adv";
 @use "./components/s-archive-event";
 @use "./components/s-event";
+@use "./components/s-archive-show";
+@use "./components/s-requisites";
+@use "./components/s-notfound";
 
 @use "./components/footer";

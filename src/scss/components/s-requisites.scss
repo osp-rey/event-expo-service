@@ -1,0 +1,70 @@
+@use "../base/templates" as *;
+@use "../base/media" as *;
+
+.s-requisites {
+  &__items {
+  }
+  &__item {
+    .wrap {
+      display: flex;
+      gap: 40px;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--gray-b);
+
+      transition:
+        background-color 0.3s ease,
+        border-radius 0.3s ease;
+
+      @include laptop-min {
+        flex-wrap: wrap;
+        gap: 20px;
+        row-gap: 15px;
+        padding: 15px;
+      }
+      @include hover {
+        border-radius: 20px;
+        background-color: var(--light-d);
+
+        .btn-copy {
+          opacity: 1;
+        }
+      }
+    }
+    .name {
+      color: var(--neutral);
+      flex: 0 1 33%;
+      @include laptop-min {
+        flex: auto;
+        width: 100%;
+      }
+    }
+    .val {
+      flex: 1;
+    }
+    .btn-copy {
+      @include flex-center;
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      opacity: 0;
+      align-self: center;
+
+      transition:
+        color 0.3s ease,
+        opacity 0.3s ease;
+
+      @include hover {
+        color: var(--primary);
+      }
+      @include laptop-min {
+        opacity: 1;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}

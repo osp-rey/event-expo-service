@@ -28,6 +28,28 @@ export default function sliders() {
     });
   }
 
+  const navSimpleSliders = document.querySelectorAll(".s-nav-simple");
+
+  if (navSimpleSliders.length) {
+    navSimpleSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        slidesPerView: "auto",
+        spaceBetween: 15,
+        breakpoints: {
+          992: {
+            slidesPerView: "auto",
+            spaceBetween: 40,
+          },
+          768: {
+            slidesPerView: "auto",
+            spaceBetween: 20,
+          },
+        },
+      });
+    });
+  }
+
   const cardPortfolioSliders = document.querySelectorAll(
     ".card-portfolio__slider",
   );
@@ -145,6 +167,22 @@ export default function sliders() {
         navigation: {
           prevEl: slider.querySelector(".slider-arrow._prev"),
           nextEl: slider.querySelector(".slider-arrow._next"),
+        },
+      });
+    });
+  }
+
+  const cardShowSliders = document.querySelectorAll(".card-show__slider");
+
+  if (cardShowSliders.length) {
+    cardShowSliders.forEach((slider) => {
+      const swiper = new Swiper(slider, {
+        speed: 900,
+        slidesPerView: "auto",
+        spaceBetween: 15,
+        pagination: {
+          el: slider.querySelector(".slider-pagination"),
+          clickable: true
         },
       });
     });
@@ -405,16 +443,16 @@ export default function sliders() {
       spaceBetween: 15,
       speed: 900,
       autoplay: {
-        delay: 4500
+        delay: 4500,
       },
       navigation: {
         prevEl: ".s-event .slider-arrow._prev",
-        nextEl: ".s-event .slider-arrow._next"
+        nextEl: ".s-event .slider-arrow._next",
       },
       pagination: {
         el: ".s-event .slider-pagination",
-        clickable: true
-      }
-    })
+        clickable: true,
+      },
+    });
   }
 }

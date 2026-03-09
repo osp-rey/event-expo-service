@@ -48,6 +48,28 @@
             });
         });
     }
+    function copy() {
+        const buttons = document.querySelectorAll("[data-copy]");
+        if (buttons.length) buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const value = btn.dataset.copy;
+                const tooltip = tippy(btn, {
+                    content: "Скопировано",
+                    trigger: "manual"
+                });
+                tooltip.show();
+                setTimeout(() => {
+                    tooltip.hide();
+                }, 1e3);
+                navigator.clipboard.writeText(value).then(() => {
+                    tooltip.show();
+                    setTimeout(() => {
+                        tooltip.hide();
+                    }, 1e3);
+                });
+            });
+        });
+    }
     function headerDropdownTels() {
         const btn = document.querySelector(".header__tel-btn");
         if (btn && window.matchMedia("(max-width: 991px)").matches) {
@@ -262,6 +284,24 @@
                 spaceBetween: 5
             });
         });
+        const navSimpleSliders = document.querySelectorAll(".s-nav-simple");
+        if (navSimpleSliders.length) navSimpleSliders.forEach(slider => {
+            new Swiper(slider, {
+                speed: 900,
+                slidesPerView: "auto",
+                spaceBetween: 15,
+                breakpoints: {
+                    992: {
+                        slidesPerView: "auto",
+                        spaceBetween: 40
+                    },
+                    768: {
+                        slidesPerView: "auto",
+                        spaceBetween: 20
+                    }
+                }
+            });
+        });
         const cardPortfolioSliders = document.querySelectorAll(".card-portfolio__slider");
         if (cardPortfolioSliders.length) cardPortfolioSliders.forEach(slider => {
             new Swiper(slider, {
@@ -350,6 +390,18 @@
                 navigation: {
                     prevEl: slider.querySelector(".slider-arrow._prev"),
                     nextEl: slider.querySelector(".slider-arrow._next")
+                }
+            });
+        });
+        const cardShowSliders = document.querySelectorAll(".card-show__slider");
+        if (cardShowSliders.length) cardShowSliders.forEach(slider => {
+            new Swiper(slider, {
+                speed: 900,
+                slidesPerView: "auto",
+                spaceBetween: 15,
+                pagination: {
+                    el: slider.querySelector(".slider-pagination"),
+                    clickable: true
                 }
             });
         });
@@ -865,6 +917,7 @@
         buttonsNote();
         cardDescr();
         textToggle();
+        copy();
         AOS.init();
         Fancybox.bind("[data-fancybox]", {
             closeButton: false

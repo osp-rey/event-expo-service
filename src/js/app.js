@@ -2,6 +2,7 @@ import "../scss/style.scss";
 import burger from "./files/burger.js";
 import buttonsNote from "./files/buttonsNote.js";
 import cardDescr from "./files/cardDescr.js";
+import copy from "./files/copy.js";
 import headerDropdownTels from "./files/headerDropdownTels.js";
 import inputmask from "./files/inputmask.js";
 import interactiveMap from "./files/interactiveMap.js";
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   buttonsNote();
   cardDescr();
   textToggle();
+  copy();
 
   AOS.init();
   Fancybox.bind("[data-fancybox]", {
