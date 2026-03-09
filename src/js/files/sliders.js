@@ -301,9 +301,9 @@ export default function sliders() {
       speed: 900,
       spaceBetween: 15,
       slidesPerView: "auto",
-      // autoplay: {
-      //   delay: 4000,
-      // },
+      autoplay: {
+        delay: 4000,
+      },
       navigation: {
         prevEl: ".s-overview .slider-arrow._prev",
         nextEl: ".s-overview .slider-arrow._next",
@@ -320,6 +320,45 @@ export default function sliders() {
         768: {
           spaceBetween: 20,
           slidesPerView: "auto",
+        },
+      },
+    });
+  }
+
+  const historySlide = document.querySelector(".s-history__slider");
+
+  if (historySlide) {
+    const thumbSwiper = new Swiper(".s-history__thumb-slider", {
+      speed: 900,
+      slidesPerView: "auto",
+      spaceBetween: 20,
+      breakpoints: {
+        1366: {
+          slidesPerView: "auto",
+          spaceBetween: 20,
+          direction: "vertical",
+        },
+      },
+    });
+
+    const swiper = new Swiper(historySlide, {
+      speed: 900,
+      spaceBetween: 30,
+      slidesPerView: 1,
+      thumbs: {
+        swiper: thumbSwiper,
+      },
+      // autoplay: {
+      //   delay: 5000,
+      // },
+      breakpoints: {
+        1680: {
+          spaceBetween: 120,
+          slidesPerView: 1,
+        },
+        992: {
+          spaceBetween: 80,
+          slidesPerView: 1,
         },
       },
     });

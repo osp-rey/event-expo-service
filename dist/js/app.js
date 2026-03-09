@@ -483,6 +483,9 @@
                 speed: 900,
                 spaceBetween: 15,
                 slidesPerView: "auto",
+                autoplay: {
+                    delay: 4e3
+                },
                 navigation: {
                     prevEl: ".s-overview .slider-arrow._prev",
                     nextEl: ".s-overview .slider-arrow._next"
@@ -499,6 +502,39 @@
                     768: {
                         spaceBetween: 20,
                         slidesPerView: "auto"
+                    }
+                }
+            });
+        }
+        const historySlide = document.querySelector(".s-history__slider");
+        if (historySlide) {
+            const thumbSwiper = new Swiper(".s-history__thumb-slider", {
+                speed: 900,
+                slidesPerView: "auto",
+                spaceBetween: 20,
+                breakpoints: {
+                    1366: {
+                        slidesPerView: "auto",
+                        spaceBetween: 20,
+                        direction: "vertical"
+                    }
+                }
+            });
+            new Swiper(historySlide, {
+                speed: 900,
+                spaceBetween: 30,
+                slidesPerView: 1,
+                thumbs: {
+                    swiper: thumbSwiper
+                },
+                breakpoints: {
+                    1680: {
+                        spaceBetween: 120,
+                        slidesPerView: 1
+                    },
+                    992: {
+                        spaceBetween: 80,
+                        slidesPerView: 1
                     }
                 }
             });
