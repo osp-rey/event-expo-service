@@ -477,6 +477,32 @@
                 }
             });
         });
+        const overviewSlider = document.querySelector(".s-overview__slider");
+        if (overviewSlider) {
+            new Swiper(overviewSlider, {
+                speed: 900,
+                spaceBetween: 15,
+                slidesPerView: "auto",
+                navigation: {
+                    prevEl: ".s-overview .slider-arrow._prev",
+                    nextEl: ".s-overview .slider-arrow._next"
+                },
+                pagination: {
+                    el: ".s-overview .slider-pagination",
+                    clickable: true
+                },
+                breakpoints: {
+                    992: {
+                        spaceBetween: 20,
+                        slidesPerView: 3
+                    },
+                    768: {
+                        spaceBetween: 20,
+                        slidesPerView: "auto"
+                    }
+                }
+            });
+        }
     }
     function spoller() {
         const spollersArray = document.querySelectorAll("[data-spollers]");

@@ -41,9 +41,6 @@
     @include laptop-min {
       margin-bottom: 30px;
       gap: 20px;
-      .slider-arrows {
-        display: none;
-      }
     }
   }
   &__btn {

@@ -293,4 +293,35 @@ export default function sliders() {
       });
     });
   }
+
+  const overviewSlider = document.querySelector(".s-overview__slider");
+
+  if (overviewSlider) {
+    const swiper = new Swiper(overviewSlider, {
+      speed: 900,
+      spaceBetween: 15,
+      slidesPerView: "auto",
+      // autoplay: {
+      //   delay: 4000,
+      // },
+      navigation: {
+        prevEl: ".s-overview .slider-arrow._prev",
+        nextEl: ".s-overview .slider-arrow._next",
+      },
+      pagination: {
+        el: ".s-overview .slider-pagination",
+        clickable: true,
+      },
+      breakpoints: {
+        992: {
+          spaceBetween: 20,
+          slidesPerView: 3,
+        },
+        768: {
+          spaceBetween: 20,
+          slidesPerView: "auto",
+        },
+      },
+    });
+  }
 }

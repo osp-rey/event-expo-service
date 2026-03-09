@@ -322,4 +322,75 @@
       color: var(--smoke);
     }
   }
+  &__features {
+    @include flex-center;
+    gap: 150px;
+    margin-top: auto;
+    padding-top: 40px;
+    @include laptop {
+      gap: 100px;
+    }
+    @include laptop-min {
+      padding-top: 30px;
+      gap: 50px;
+    }
+    @include tablet-min {
+      padding-top: 30px;
+    }
+    @include tablet {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  &__features-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 16px;
+
+    text-align: center;
+    white-space: nowrap;
+
+    @include tablet-min {
+      padding-bottom: 0;
+    }
+
+    .num {
+      font-family: "KanitCyrillic", sans-serif;
+      font-size: 130px;
+      line-height: 100%;
+      @include laptop {
+        font-size: 100px;
+      }
+      @include laptop-min {
+        font-size: 80px;
+      }
+      @include tablet-min {
+        font-size: 70px;
+      }
+    }
+    .text {
+      position: absolute;
+      font-size: 20px;
+      padding: 20px;
+      display: block;
+      width: fit-content;
+
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50px;
+      backdrop-filter: blur(15px);
+      background: rgba(26, 29, 34, 0.3);
+      z-index: 10;
+      bottom: 0;
+
+      @include laptop {
+        font-size: 18px;
+        padding: 16px;
+      }
+      @include laptop-min {
+        position: static;
+      }
+    }
+  }
 }
