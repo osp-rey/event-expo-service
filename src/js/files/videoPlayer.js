@@ -7,15 +7,7 @@ export default function videoPlayer() {
       const btnPlay = player.querySelector(".btn-play");
 
       player.addEventListener("click", () => {
-        if (player.classList.contains("_active")) {
-          player.classList.remove("_active");
-
-          video.pause();
-
-          if (btnPlay) {
-            btnPlay.classList.remove("_active");
-          }
-        } else {
+        if (!player.classList.contains("_active")) {
           player.classList.add("_active");
 
           if (!video.src) {
