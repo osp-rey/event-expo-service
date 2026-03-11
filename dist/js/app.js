@@ -84,6 +84,18 @@
             });
         }
     }
+    function headerScroll() {
+        const headerF = document.querySelector(".header-f");
+        const header = document.querySelector(".header");
+        if (header) {
+            let lastScrollTop = 0;
+            window.addEventListener("scroll", () => {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop && scrollTop > header.clientHeight * 1.5) headerF.classList.add("_scroll"); else headerF.classList.remove("_scroll");
+                lastScrollTop = scrollTop;
+            });
+        }
+    }
     function inputmask() {
         const inputs = document.querySelectorAll('input[type="tel"]');
         const im = new Inputmask("+7 (999) 999-99-99");
@@ -914,6 +926,7 @@
         cardDescr();
         textToggle();
         copy();
+        headerScroll();
         AOS.init();
         Fancybox.bind("[data-fancybox]", {
             closeButton: false

@@ -13,6 +13,7 @@
   }
   @include tablet {
     padding: 20px 0px;
+    min-height: 600px;
   }
   &::before {
     position: absolute;

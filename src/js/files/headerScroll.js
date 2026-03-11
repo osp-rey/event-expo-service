@@ -1,27 +1,17 @@
-import { slideDown, slideUp } from "./help-functions.js";
-
 export default function headerScroll() {
-  const headerTop = document.querySelector(".header__top");
+  const headerF = document.querySelector(".header-f");
+  const header = document.querySelector(".header")
 
-  if (headerTop) {
-    const header = document.querySelector(".header");
+  if (header) {
     let lastScrollTop = 0;
 
     window.addEventListener("scroll", () => {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-      if (window.matchMedia("(max-width: 991px)").matches) return;
-
-      if (scrollTop > headerTop.clientHeight) {
-        header.classList.add("_scroll");
-        if (!headerTop.hasAttribute("hidden")) {
-          slideUp(headerTop);
-        }
+      if (scrollTop > lastScrollTop && scrollTop > (header.clientHeight * 1.5)) {
+        headerF.classList.add("_scroll");
       } else {
-        header.classList.remove("_scroll");
-        if (headerTop.hasAttribute("hidden")) {
-          slideDown(headerTop);
-        }
+       headerF.classList.remove("_scroll");
       }
 
       lastScrollTop = scrollTop;

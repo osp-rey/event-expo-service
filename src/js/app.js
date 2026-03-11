@@ -4,6 +4,7 @@ import buttonsNote from "./files/buttonsNote.js";
 import cardDescr from "./files/cardDescr.js";
 import copy from "./files/copy.js";
 import headerDropdownTels from "./files/headerDropdownTels.js";
+import headerScroll from "./files/headerScroll.js";
 import inputmask from "./files/inputmask.js";
 import interactiveMap from "./files/interactiveMap.js";
 import map from "./files/map.js";
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
   cardDescr();
   textToggle();
   copy();
+  headerScroll();
 
   AOS.init();
   Fancybox.bind("[data-fancybox]", {

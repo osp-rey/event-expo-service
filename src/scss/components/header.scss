@@ -1,20 +1,83 @@
 @use "../base/templates" as *;
 @use "../base/media" as *;
 
+.header-f {
+  position: fixed;
+  padding-top: 10px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 110;
+  transform: translateY(calc(-100% - 20px));
+
+  transition: transform .4s ease;
+
+  &._scroll {
+    transform: translateY(0);
+  }
+
+  @include laptop-min {
+    display: none;
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    @include desktop-big {
+      gap: 30px;
+    }
+    @include laptop {
+      gap: 20px;
+      font-size: 14px;
+    }
+  }
+  &__drop-tel {
+    margin: 0 auto;
+    @include laptop-middle {
+      display: none !important;
+    }
+  }
+  .header__services-btn {
+    font-size: inherit;
+  }
+  .header__bottom-btn {
+    display: flex !important;
+    
+    @media (min-width: 1200px) {
+      margin-left: 0;
+    }
+  }
+  .header__nav-list {
+    font-size: inherit;
+    @include desktop-big {
+      gap: 30px;
+    }
+    @include laptop {
+      gap: 20px;
+    }
+  }
+}
 .header {
   position: absolute;
   right: 0;
   left: 0;
   top: 0;
+  padding-top: 10px;
   z-index: 100;
+  @include laptop-min {
+    position: fixed;
+  }
   &._simple {
     position: relative;
+    @include laptop-min {
+      position: sticky;
+    }
   }
   &__wrapper {
     position: relative;
     padding: 10px 40px;
     border-radius: 20px;
-    margin-top: 10px;
     gap: 30px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -437,5 +500,59 @@
     @include laptop-middle {
       display: none;
     }
+  }
+  &__drop {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    @include hover {
+      .icon {
+        transform: rotate(180deg);
+      }
+
+      .header__drop-item {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    .icon {
+      display: block;
+      width: 20px;
+      flex-shrink: 0;
+
+      transition: transform 0.3s ease;
+    }
+  }
+  &__drop-item {
+    position: absolute;
+    top: 100%;
+    left: -40px;
+    width: 280px;
+    padding-top: 30px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition:
+      transform 0.4s ease,
+      opacity 0.4s ease,
+      visibility 0.4s ease;
+  }
+  &__drop-body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    white-space: nowrap;
+
+    backdrop-filter: blur(15px);
+    background: rgba(0, 0, 0, 0.8);
   }
 }
